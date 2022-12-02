@@ -58,6 +58,26 @@
                 Spare Part List
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PR Data</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PO Data</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Payment</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">
