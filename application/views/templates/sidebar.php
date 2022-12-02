@@ -35,7 +35,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          <li class="nav-item">
             <a href="<?= base_url(); ?>" class="nav-link">
               <i class="fas fa-fw fa-tachometer-alt"></i>
               <p>
@@ -43,7 +43,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item menu-open">
+          <li class="nav-item">
             <a href="<?php echo base_url('form_wo'); ?>" class="nav-link">
               <i class="fas fa-fw fa-file-alt"></i>
               <p>
@@ -51,7 +51,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item menu-open">
+          <li class="nav-item">
             <a href="<?php echo base_url('sparepartlist'); ?>" class="nav-link">
               <i class="ml-1 far fa-file-alt"></i>
               <p class="ml-1">
@@ -79,7 +79,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="ml-1 fas fa-sign-out-alt"></i>
               <p class="ml-1">
