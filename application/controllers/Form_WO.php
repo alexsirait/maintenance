@@ -6,7 +6,7 @@ class Form_WO extends CI_Controller {
 	{
 		$this->load->view('templates/header');
         $this->load->view('templates/sidebar');
-		$this->load->view('form_wo');
+		$this->load->view('form_wo2');
 		$this->load->view('templates/footer');
 	}
 }
