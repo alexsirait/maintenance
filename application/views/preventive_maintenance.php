@@ -26,7 +26,7 @@
               <a class="btn btn-primary float-right" href="<?php echo base_url(); ?>dashboard/add_maintenance" style="color:black"><b>Add Data</b></a>
             </div>
               <div class="table-responsive">
-                  <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead class="thead-light">
                         <tr>
                           <th style="white-space:nowrap;" class="text-center" colspan="4"><b>Month</b></th>

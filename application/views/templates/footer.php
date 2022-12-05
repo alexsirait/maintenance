@@ -48,8 +48,15 @@
 <script src="<?php echo base_url() ?>assets/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php echo base_url() ?>assets/dist/js/pages/dashboard.js"></script>
+<!-- Data Tables -->
+<script src="<?php echo base_url() ?>assets/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<!-- <script src="<?php echo base_url() ?>assets/plugins/datatables-responsive/jquery.dataTables.responsive.min.js"></script> -->
+<!-- <script src="<?php echo base_url() ?>assets/plugins/datatables-responsive/jquery.dataTables.responsive.min.js"></script> -->
+<script src="<?php echo base_url() ?>assets/plugins/datatables-responsive/jquery.responsive.bootstrap4.js"></script>
+<script src="<?php echo base_url() ?>assets/plugins/datatables-responsive/jquery.responsive.bootstrap4.min.js"></script>
 <script>
   $(document).ready( function () {
-    $('#myTable').DataTable();
+    $('#dataTable').DataTable();
   } );
 </script>

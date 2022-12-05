@@ -24,8 +24,8 @@
   <!-- Daterange picker -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/daterangepicker/daterangepicker.css">
   <!-- Data Tables -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/datatables/jquery.dataTables.js">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/datatables/jquery.dataTables.min.js">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/datatables-responsive/responsive.bootstrap4.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/datatables-responsive/responsive.bootstrap4.min.css">
   <!-- summernote -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/summernote/summernote-bs4.min.css">
 </head>
