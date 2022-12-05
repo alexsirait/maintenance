@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Master List of Equipments</h1>
+            <h1 class="m-0">Dashboard | Maintenance</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -13,6 +13,20 @@
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800"></h1>
+        </div>
+        <div class="alert alert-info">
+            <h4>
+              <center>
+                <strong>--- Cladtek | Maintenance ---</strong> 
+              </center>         
+            </h4>
+            <div class="px-2 bg-light ">
+                <marquee class="py-3">Welcome To Cladtek Maintenance</marquee>
+            </div>
+        </div>
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
