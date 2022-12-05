@@ -158,7 +158,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <button class="btn btn-primary float-right">Submit</button>
+                        <button type="submit" class='mt-4 btn btn-primary float-right'>Submit <i class="fas fa-arrow-right ml-2"></i></button>
                     </form>
                 </div>
                 <div class="card-footer">Note : Test the Machine after repaired</div>
