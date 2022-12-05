@@ -60,7 +60,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo base_url('sparepartlist'); ?>" class="nav-link active">
+                <a href="<?php echo base_url('sparepartlist'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>PR Data</p>
                 </a>
