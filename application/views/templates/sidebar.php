@@ -60,19 +60,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="<?php echo base_url('sparepartlist'); ?>" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>PR Data</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?php echo base_url('sparepartlist/po_data'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>PO Data</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?php echo base_url('sparepartlist/payment'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Payment</p>
                 </a>
