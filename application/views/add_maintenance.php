@@ -43,11 +43,9 @@
               </form>
             </div>
             <div class="form-group row">
-              <div class="col-8 pl-4">
+              <div class="col-12 pl-4 pr-4">
                 <a href="<?= base_url(); ?>dashboard/preventive_maintenance" class="btn btn-primary float-left">Back</a>
-              </div>
-              <div class="offset-4 col-8 pr-4">
-                <button name="tambah" id="tambah" type="submit" class="btn btn-primary float-right">Submit</button>                
+                <button name="tambah" id="tambah" type="submit" class="btn btn-primary float-right">Submit</button>
               </div>
             </div>
         </div>
