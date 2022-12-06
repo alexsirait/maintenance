@@ -44,7 +44,7 @@
                 <p>Master List of Equipment</p>
               </div>
               <div class="icon">
-                <i class="ion ion-bag"></i>
+                <i class="ml-1 far fa-file-alt"></i>
               </div>
               <a href="<?php echo base_url(); ?>Dashboard/equipment_list" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -72,7 +72,7 @@
                 <p>PPM vs Actual</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="nav-icon fas fa-table"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
