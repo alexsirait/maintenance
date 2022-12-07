@@ -26,7 +26,7 @@
             <a class="btn btn-primary float-right" href="<?php echo base_url(); ?>dashboard/add_equipment" style="color:black"><b>Add Data</b></a>
           </div>
               <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
                       <thead class="thead-light">
                         <tr>
                           <th style="white-space:nowrap;" class="text-center"><b>No</b></th>
@@ -51,20 +51,21 @@
                         <?php $i = 1;
                           foreach ($equipment_form as $item) { ?>				
                         <tr>
-                          <th scope="row"><?= $i++; ?></th>
-                          <td align=center><?= $item['code'] ?></td>
-                          <td align=center><?= $item['machine_description'] ?></td>
-                          <td align=center><?= $item['family_name'] ?></td>						
-                          <td align=center><?= $item['type_of_machine'] ?></td>														
-                          <td align=center><?= $item['model'] ?></td>
-                          <td align=center><?= $item['serial'] ?></td>
-                          <td align=center><?= $item['capacity'] ?></td>
-                          <td align=center><?= $item['product'] ?></td>
-                          <td align=center><?= $item['year'] ?></td>
-                          <td align=center><?= $item['location'] ?></td>
-                          <td align=center><?= $item['status'] ?></td>
-                          <td align=center><?= $item['group'] ?></td>
-                          <td align=center><?= $item['pic'] ?></td>                          
+                          <td scope="row" align=center style="white-space:nowrap;"><?= $i++; ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['code'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['machine_description'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['family_name'] ?></td>						
+                          <td align=center style="white-space:nowrap;"><?= $item['type_of_machine'] ?></td>														
+                          <td align=center style="white-space:nowrap;"><?= $item['model'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['serial'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['capacity'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['product'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['year'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['location'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['status'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['group'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['pic'] ?></td>                          
+                          <td align=center style="white-space:nowrap;"><a href="<?= base_url() ?>Dashboard/deleteReport/<?= $item['id'] ?>" onclick="return confirm('Hapus?');" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>                          
                         </tr>   
                         <?php } ?>
                         <?php endif; ?>                     

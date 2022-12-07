@@ -40,13 +40,13 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3><?= $equipment_form ?></h3>
                 <p>Master List of Equipment</p>
               </div>
               <div class="icon">
                 <i class="ml-1 far fa-file-alt"></i>
               </div>
-              <a href="<?php echo base_url(); ?>Dashboard/equipment_list" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url(); ?>Dashboard/checkreport_equipment" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
