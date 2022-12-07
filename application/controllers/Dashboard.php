@@ -10,14 +10,6 @@ class Dashboard extends CI_Controller {
 		$this->load->view('dashboard', $data);
 		$this->load->view('templates/footer');
 	}
-	
-	// public function equipment_list()
-	// {
-	// 	$this->load->view('templates/header');
-    //     $this->load->view('templates/sidebar');
-	// 	$this->load->view('equipment_list');
-	// 	$this->load->view('templates/footer');
-	// }
 
 	public function add_equipment()
 	{
@@ -94,8 +86,7 @@ class Dashboard extends CI_Controller {
 
 	  
 	public function deleteReport($id)
-	{
-		
+	{		
 		$id = $this->DashboardModel->hapus($id);
         $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert"> Deleted Succesfully!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('Dashboard/checkreport_equipment');
