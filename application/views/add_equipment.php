@@ -22,12 +22,12 @@
             <h6 class="m-0 font-weight-bold text-primary">Masterlist of the Equipment Form</h6>
           </div>
             <div class="card-body">
-              <form action="" method="post" enctype="multipart/form-data">
+              <form action="<?php echo base_url(); ?>Dashboard/save_equipment" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" required="required">
                   <div class="form-row">
                     <div class="form-group col-md-6">
                        <label for="code">Code</label>
-                        <input type="number" class="form-control" name="code">
+                        <input type="text" class="form-control" name="code">
                         <small class="form-text text-danger danger"></small>
                     </div>
                     <div class="form-group col-md-6">
@@ -79,15 +79,15 @@
                       <label for="pic">Pic</label>
                       <input type="text" class="form-control" name="pic">
                     </div>                                                       
-                  </div>
-              </form>
+                  </div>              
             </div>
-            <div class="form-group row">
-              <div class="col-12 pl-4 pr-4">
-                <a href="<?= base_url(); ?>dashboard/equipment_list" class="btn btn-primary float-left">Back</a>
-                <button name="tambah" id="tambah" type="submit" class="btn btn-primary float-right">Submit</button>
-              </div>              
-            </div>
+              <div class="form-group row">
+                <div class="col-12 pl-4 pr-4">
+                  <a href="<?= base_url(); ?>dashboard/equipment_list" class="btn btn-primary float-left">Back</a>
+                  <button name="submit" id="submit" type="submit" class="btn btn-primary float-right">Submit</button>
+                </div>              
+              </div>
+            </form>
         </div>
       <!-- akhir disini -->
       </div>

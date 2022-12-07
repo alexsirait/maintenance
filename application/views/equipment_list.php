@@ -46,92 +46,28 @@
                           <th style="white-space:nowrap;" class="text-center"><b>Action</th>
                         </tr>
                       </thead>
-                      <tbody>				
+                      <tbody>
+                        <?php if ($equipment_form != null) : ?>
+                        <?php $i = 1;
+                          foreach ($equipment_form as $item) { ?>				
                         <tr>
-                          <td align=center>1</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>						
-                          <td align=center>testing</td>														
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                          <td align=center>testing</td>
-                        </tr>
-                        <tr>
-                          <td align=center>2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>						
-                          <td align=center>testing2</td>														
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                          <td align=center>testing2</td>
-                        </tr>
-                        <tr>
-                          <td align=center>3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>						
-                          <td align=center>testing3</td>														
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                          <td align=center>testing3</td>
-                        </tr>
-                        <tr>
-                          <td align=center>4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>						
-                          <td align=center>testing4</td>														
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                          <td align=center>testing4</td>
-                        </tr>
-                        <tr>
-                          <td align=center>5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>						
-                          <td align=center>testing5</td>														
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                          <td align=center>testing5</td>
-                        </tr>
+                          <th scope="row"><?= $i++; ?></th>
+                          <td align=center><?= $item['code'] ?></td>
+                          <td align=center><?= $item['machine_description'] ?></td>
+                          <td align=center><?= $item['family_name'] ?></td>						
+                          <td align=center><?= $item['type_of_machine'] ?></td>														
+                          <td align=center><?= $item['model'] ?></td>
+                          <td align=center><?= $item['serial'] ?></td>
+                          <td align=center><?= $item['capacity'] ?></td>
+                          <td align=center><?= $item['product'] ?></td>
+                          <td align=center><?= $item['year'] ?></td>
+                          <td align=center><?= $item['location'] ?></td>
+                          <td align=center><?= $item['status'] ?></td>
+                          <td align=center><?= $item['group'] ?></td>
+                          <td align=center><?= $item['pic'] ?></td>                          
+                        </tr>   
+                        <?php } ?>
+                        <?php endif; ?>                     
                       </tbody>
                   </table>
               </div>
