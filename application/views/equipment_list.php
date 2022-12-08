@@ -21,6 +21,7 @@
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Masterlist of the Equipment</h6>
           </div>          
+          <?= $this->session->flashdata('flash');  ?>
           <div class="card-body">
           <div class="row pl-2 mb-2">	
             <a class="btn btn-primary float-right" href="<?php echo base_url(); ?>dashboard/add_equipment" style="color:black"><b>Add Data</b></a>
@@ -65,7 +66,10 @@
                           <td align=center style="white-space:nowrap;"><?= $item['status'] ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['group'] ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['pic'] ?></td>                          
-                          <td align=center style="white-space:nowrap;"><a href="<?= base_url() ?>Dashboard/deleteReport/<?= $item['id'] ?>" onclick="return confirm('Hapus?');" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>                          
+                          <td align=center style="white-space:nowrap;">
+                            <a class="btn btn-info btn-sm m-1" href="<?= base_url(); ?>Dashboard/ubah_equipment/<?= $item['id'] ?>" style="color: black"><i class="fas fa-solid fa-pencil-alt"></i></a>
+                            <a href="<?= base_url() ?>Dashboard/deleteReport/<?= $item['id'] ?>" onclick="return confirm('Hapus?');" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                          </td>                          
                         </tr>   
                         <?php } ?>
                         <?php endif; ?>                     
