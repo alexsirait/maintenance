@@ -20,11 +20,11 @@
         <div class="card shadow mb-4">
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Masterlist of the Equipment</h6>
-          </div>          
+          </div>                    
+          <div class="card-body col-sm-12">
           <?= $this->session->flashdata('flash');  ?>
-          <div class="card-body">
-          <div class="row pl-2 mb-2">	
-            <a class="btn btn-primary float-right" href="<?php echo base_url(); ?>dashboard/add_equipment" style="color:black"><b>Add Data</b></a>
+          <div class="mb-2" style="float: left;">	
+            <a class="btn btn-primary float-right" href="<?php echo base_url(); ?>dashboard/add_equipment" style="color:black"><i class="fas fa-plus"></i> <b>Add Data</b></a>
           </div>
               <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">

@@ -95,7 +95,7 @@
               <div class="form-group row">
                 <div class="col-12 pl-4 pr-4">
                   <a href="<?= base_url(); ?>dashboard/checkreport_equipment" class="btn btn-primary float-left">Back</a>
-                  <button name="tambah" id="tambah" type="submit" class="btn btn-primary float-right">Save</button>
+                  <button name="tambah" id="tambah" type="submit" class="btn btn-primary float-right">Save <i class="fas fa-arrow-circle-right"></i></button>
                 </div>              
               </div>
             </form>
