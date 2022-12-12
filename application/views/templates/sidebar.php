@@ -47,13 +47,21 @@
             <a href="<?php echo base_url('form_wo'); ?>" class="nav-link">
               <i class="fas fa-fw fa-file-alt"></i>
               <p>
-                Word Order E
+                Work Order E
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('report_wo'); ?>" class="nav-link">
+              <i class="far fa-file-alt ml-1 mr-1"></i>
+              <p>
+                Work Order Report
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?php echo base_url('sparepartlist'); ?>" class="nav-link">
-              <i class="ml-1 far fa-file-alt"></i>
+              <i class="fa fa-table"></i>
               <p class="ml-1">
                 Spare Part List
               </p>
@@ -80,7 +88,63 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?= base_url('workshop_electrical') ?>" class="nav-link">
+              <i class="ml-1 fa fa-file-pdf"></i>
+              <p class="ml-1">
+                Workshop Electrical <span class="ml-4">Drawing</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('workshop_argon'); ?>" class="nav-link">
+              <i class="ml-1 fa fa-file-pdf"></i>
+              <p class="ml-1">
+                Workshop Argon P&I <span class="ml-4">Drawing</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('workshop_airline') ?>" class="nav-link">
+              <i class="ml-1 fa fa-file-pdf"></i>
+              <p class="ml-1">
+                Workshop Airline P&I <span class="ml-4">Drawing</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('company_water') ?>" class="nav-link">
+              <i class="ml-1 fa fa-file-pdf"></i>
+              <p class="ml-1">
+                Company Water Supply <span class="ml-4">Drawing</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('argon_gas') ?>" class="nav-link">
+              <i class="ml-1 fa fa-file-pdf"></i>
+              <p class="ml-1">
+                Argon Gas Consumption
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('power_consumption') ?>" class="nav-link">
+              <i class="ml-1 fa fa-file-pdf"></i>
+              <p class="ml-1">
+                Power Consumption
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('atb_water') ?>" class="nav-link">
+              <i class="ml-1 fa fa-file-pdf"></i>
+              <p class="ml-1">
+                ATB Water Consumption
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('login') ?>" class="nav-link">
               <i class="ml-1 fas fa-sign-out-alt"></i>
               <p class="ml-1">
                 Logout

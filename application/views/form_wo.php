@@ -20,35 +20,35 @@
             <div class="card mx-auto" style="width: 90%;">
                 <h5 class="card-header text-center">MAINTENANCE WORK ORDER</h5>
                 <div class="card-body">
-                    <form class="" action="" method="post" enctype="multipart/form-data">
+                    <?php echo form_open_multipart('/form_wo/store_form_wo'); ?>
                         <div class="form-row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="date">Order by</label>
-                                    <input type="text" class="form-control" name="date" placeholder="Order by . . ." required>
-                                    <small class="form-text text-danger danger"><?= form_error('date'); ?></small>
+                                    <input type="text" class="form-control" name="order_by" placeholder="Order by . . ." required>
+                                    <small class="form-text text-danger danger"><?= form_error('order_by'); ?></small>
                                 </div>
                                 <div class="form-group">
                                     <label for="date">Day, Date & Time</label>
-                                    <input type="date" class="form-control" name="job_description" required>
-                                    <small class="form-text text-danger danger"><?= form_error('applicable_job'); ?></small>
+                                    <input type="datetime-local" class="form-control" name="day_date_time_order" required>
+                                    <small class="form-text text-danger danger"><?= form_error('day_date_time_order'); ?></small>
                                 </div>
                                 <div class="form-group">
                                     <label for="date">WO Received by</label>
-                                    <input type="text" class="form-control" name="job_description" placeholder="WO Received by . . ." required>
-                                    <small class="form-text text-danger danger"><?= form_error('applicable_job'); ?></small>
+                                    <input type="text" class="form-control" name="wo_received_by" placeholder="WO Received by . . ." required>
+                                    <small class="form-text text-danger danger"><?= form_error('wo_received_by'); ?></small>
                                 </div>
                                 <div class="form-group">
                                     <label for="date">Day, Date & Time</label>
-                                    <input type="date" class="form-control" name="job_description" required>
-                                    <small class="form-text text-danger danger"><?= form_error('applicable_job'); ?></small>
+                                    <input type="datetime-local" class="form-control" name="day_date_time_received" required>
+                                    <small class="form-text text-danger danger"><?= form_error('day_date_time_received'); ?></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="date">Order Description :</label>
-                                    <textarea class="form-control" name="" id="" cols="30" rows="11" placeholder="Order Description . . ." required></textarea>
-                                    <small class="form-text text-danger danger"><?= form_error('applicable_job'); ?></small>
+                                    <textarea class="form-control" name="order_description" id="" cols="30" rows="11" placeholder="Order Description . . ." required></textarea>
+                                    <small class="form-text text-danger danger"><?= form_error('order_description'); ?></small>
                                 </div>
                             </div>
                         </div>
@@ -56,40 +56,44 @@
                         <div class="form-row mt-4">
                             <div class="form-group col-md-6">
                                 <label for="date">Machine & Tag No.</label>
-                                <input type="text" class="form-control" name="date" placeholder="Machine & Tag No . . ." required>
-                                <small class="form-text text-danger danger"><?= form_error('date'); ?></small>
+                                <input type="text" class="form-control" name="machine_tag_no" placeholder="Machine & Tag No . . ." required>
+                                <small class="form-text text-danger danger"><?= form_error('machine_tag_no'); ?></small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="date">Start Repair</label>
-                                <input type="text" class="form-control" name="date" placeholder="Start Repair . . ." required>
-                                <small class="form-text text-danger danger"><?= form_error('date'); ?></small>
+                                <input type="datetime-local" class="form-control" name="start_repair" placeholder="Start Repair . . ." required>
+                                <small class="form-text text-danger danger"><?= form_error('start_repair'); ?></small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="date">Serial No</label>
-                                <input type="text" class="form-control" name="date" placeholder="Serial No . . ." required>
-                                <small class="form-text text-danger danger"><?= form_error('date'); ?></small>
+                                <input type="text" class="form-control" name="serial_no" placeholder="Serial No . . ." required>
+                                <small class="form-text text-danger danger"><?= form_error('serial_no'); ?></small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="date">Completed Repair</label>
-                                <input type="text" class="form-control" name="date" placeholder="Completed Repair . . ." required>
-                                <small class="form-text text-danger danger"><?= form_error('date'); ?></small>
+                                <input type="text" class="form-control" name="completed_repair" placeholder="Completed Repair . . ." required>
+                                <small class="form-text text-danger danger"><?= form_error('completed_repair'); ?></small>
                             </div>
                         </div>
                         <div class="form-row">
                             <label>Detail of Problem :</label>
-                            <textarea id="criminal_desc" name="position_profile" cols="40" rows="5" class="form-control mb-3" placeholder="Detail of Problem . . ." required></textarea>
+                            <textarea id="criminal_desc" name="detail_problem" cols="40" rows="5" class="form-control" placeholder="Detail of Problem . . ." required></textarea>
+                            <small class="form-text text-danger danger"><?= form_error('detail_problem'); ?></small>
                         </div>
                         <div class="form-row">
                             <label>Root Cause :</label>
-                            <textarea id="criminal_desc" name="position_profile" cols="40" rows="5" class="form-control mb-3" placeholder="Root Cause . . ." required></textarea>
+                            <textarea id="criminal_desc" name="root_cause" cols="40" rows="5" class="form-control" placeholder="Root Cause . . ." required></textarea>
+                            <small class="form-text text-danger danger"><?= form_error('root_cause'); ?></small>
                         </div>
                         <div class="form-row">
                             <label>Corrective Action :</label>
-                            <textarea id="criminal_desc" name="position_profile" cols="40" rows="5" class="form-control mb-3" placeholder="Corrective Action . . ." required></textarea>
+                            <textarea id="criminal_desc" name="corrective_action" cols="40" rows="5" class="form-control" placeholder="Corrective Action . . ." required></textarea>
+                            <small class="form-text text-danger danger"><?= form_error('corrective_action'); ?></small>
                         </div>
                         <div class="form-row">
                             <label>Preventive Action :</label>
-                            <textarea id="criminal_desc" name="position_profile" cols="40" rows="5" class="form-control mb-3" placeholder="Preventive Action . . ." required></textarea>
+                            <textarea id="criminal_desc" name="preventive_action" cols="40" rows="5" class="form-control" placeholder="Preventive Action . . ." required></textarea>
+                            <small class="form-text text-danger danger"><?= form_error('preventive_action'); ?></small>
                         </div>
                         <h5 style="white-space:nowrap;" class="text-center font-weight-bold mt-3">PARTS REPLACEMENT</h5>
                         <div class="form-row mt-4 table-responsive">
@@ -106,24 +110,60 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="text" class="form-control" placeholder="Part Description . . ." required></td>
-                                        <td><input type="text" class="form-control" placeholder="Part No . . ." required></td>
-                                        <td><input type="text" class="form-control" placeholder="Qty . . ." required></td>
-                                        <td><input type="text" class="form-control" placeholder="Remarks . . ." required></td>
+                                        <td>
+                                            <input name="part_description_1" type="text" class="form-control" placeholder="Part Description . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('part_description_1'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="part_no_1" type="text" class="form-control" placeholder="Part No . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('part_no_1'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="qty_1" type="text" class="form-control" placeholder="Qty . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('qty_1'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="remarks_1" type="text" class="form-control" placeholder="Remarks . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('remarks_1'); ?></small>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td><input type="text" class="form-control" placeholder="Part Description . . ." required></td>
-                                        <td><input type="text" class="form-control" placeholder="Part No . . ." required></td>
-                                        <td><input type="text" class="form-control" placeholder="Qty . . ." required></td>
-                                        <td><input type="text" class="form-control" placeholder="Remarks . . ." required></td>
+                                        <td>
+                                            <input name="part_description_2" type="text" class="form-control" placeholder="Part Description . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('part_description_2'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="part_no_2" type="text" class="form-control" placeholder="Part No . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('part_no_2'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="qty_2" type="text" class="form-control" placeholder="Qty . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('qty_2'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="remarks_2" type="text" class="form-control" placeholder="Remarks . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('remarks_2'); ?></small>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td><input type="text" class="form-control" placeholder="Part Description . . ." required></td>
-                                        <td><input type="text" class="form-control" placeholder="Part No . . ." required></td>
-                                        <td><input type="text" class="form-control" placeholder="Qty . . ." required></td>
-                                        <td><input type="text" class="form-control" placeholder="Remarks . . ." required></td>
+                                        <td>
+                                            <input name="part_description_3" type="text" class="form-control" placeholder="Part Description . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('part_description_3'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="part_no_3" type="text" class="form-control" placeholder="Part No . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('part_no_3'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="qty_3" type="text" class="form-control" placeholder="Qty . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('qty_3'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="remarks_3" type="text" class="form-control" placeholder="Remarks . . ." required>
+                                            <small class="form-text text-danger danger"><?= form_error('remarks_3'); ?></small>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -144,16 +184,40 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input type="file" class="form-control" required></td>
-                                        <td><input type="file" class="form-control" required></td>
-                                        <td><input type="file" class="form-control" required></td>
-                                        <td colspan="2"><input type="file" class="form-control" required></td>
+                                        <td>
+                                            <input name="ordered_by" type="file" class="form-control" required>
+                                            <small class="form-text text-danger danger"><?= form_error('ordered_by'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="repaired_by" type="file" class="form-control" required>
+                                            <small class="form-text text-danger danger"><?= form_error('repaired_by'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="head_production" type="file" class="form-control" required>
+                                            <small class="form-text text-danger danger"><?= form_error('head_production'); ?></small>
+                                        </td>
+                                        <td colspan="2">
+                                            <input name="head_maintenance" type="file" class="form-control" required>
+                                            <small class="form-text text-danger danger"><?= form_error('head_maintenance'); ?></small>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Name & Sign" required></td>
-                                        <td><input type="text" class="form-control" placeholder="Name & Sign of Technician" required></td>
-                                        <td><input type="text" class="form-control" placeholder="Name & Sign" required></td>
-                                        <td colspan="2"><input type="text" class="form-control" placeholder="Name sign of User" required></td>
+                                        <td>
+                                            <input name="ordered_by_name" type="text" class="form-control" placeholder="Name & Sign" required>
+                                            <small class="form-text text-danger danger"><?= form_error('ordered_by_name'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="repaired_by_name" type="text" class="form-control" placeholder="Name & Sign of Technician" required>
+                                            <small class="form-text text-danger danger"><?= form_error('repaired_by_name'); ?></small>
+                                        </td>
+                                        <td>
+                                            <input name="head_production_name" type="text" class="form-control" placeholder="Name & Sign" required>
+                                            <small class="form-text text-danger danger"><?= form_error('head_production_name'); ?></small>
+                                        </td>
+                                        <td colspan="2">
+                                            <input name="head_maintenance_name" type="text" class="form-control" placeholder="Name sign of User" required>
+                                            <small class="form-text text-danger danger"><?= form_error('head_maintenance_name'); ?></small>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
