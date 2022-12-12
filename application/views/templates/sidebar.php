@@ -88,10 +88,18 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a href="<?php echo base_url('sparepartlist'); ?>" class="nav-link">
+              <i class="fa fa-angle-double-right"></i>
+              <p class="ml-1">
+                Workshop
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
             <a href="<?= base_url('workshop_electrical') ?>" class="nav-link">
               <i class="ml-1 fa fa-file-pdf"></i>
               <p class="ml-1">
-                Workshop Electrical <span class="ml-4">Drawing</span>
+                Electrical Drawing
               </p>
             </a>
           </li>
@@ -99,7 +107,7 @@
             <a href="<?php echo base_url('workshop_argon'); ?>" class="nav-link">
               <i class="ml-1 fa fa-file-pdf"></i>
               <p class="ml-1">
-                Workshop Argon P&I <span class="ml-4">Drawing</span>
+                Argon P&I Drawing
               </p>
             </a>
           </li>
@@ -107,7 +115,7 @@
             <a href="<?= base_url('workshop_airline') ?>" class="nav-link">
               <i class="ml-1 fa fa-file-pdf"></i>
               <p class="ml-1">
-                Workshop Airline P&I <span class="ml-4">Drawing</span>
+                Airline P&I Drawing
               </p>
             </a>
           </li>
@@ -115,7 +123,7 @@
             <a href="<?= base_url('company_water') ?>" class="nav-link">
               <i class="ml-1 fa fa-file-pdf"></i>
               <p class="ml-1">
-                Company Water Supply <span class="ml-4">Drawing</span>
+                Water Supply Drawing
               </p>
             </a>
           </li>
@@ -143,9 +151,11 @@
               </p>
             </a>
           </li>
+            </ul>
+          </li>
           <li class="nav-item">
             <a href="<?= base_url('login') ?>" class="nav-link">
-              <i class="ml-1 fas fa-sign-out-alt"></i>
+              <i class="fas fa-sign-out-alt"></i>
               <p class="ml-1">
                 Logout
               </p>
