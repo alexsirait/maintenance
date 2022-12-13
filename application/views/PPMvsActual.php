@@ -31,19 +31,19 @@ use PHPUnit\Framework\Constraint\Count;
                   <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
                       <thead class="thead-light">
                         <tr>
-                          <th style="white-space:nowrap;" class="text-center"><b>No</b></th>
                           <th style="white-space:nowrap;" class="text-center"><b>Pretentive Done</th>
                           <th style="white-space:nowrap;" class="text-center"><b>Pretentive & Calibration</th>
+                          <th style="white-space:nowrap;" class="text-center"><b>Preventive</b></th>
                           <th style="white-space:nowrap;" class="text-center"><b>Under Repair</th>
                         </tr>
                       </thead>
                       <tbody>
                       <?php $i = 1; { ?>
                         <tr>
-                          <td scope="row" align=center style="white-space:nowrap;"><?= $i++; ?></td>
-                          <td align=center style="white-space:nowrap;"><?php echo $TotalD ?></td>
-                          <td align=center style="white-space:nowrap;">Tes</td>
-                          <td align=center style="white-space:nowrap;">tes</td>
+                          <td align=center style="white-space:nowrap;"><?php foreach ($bobi as $b) { ?><p><?= $b['total'] ?></p><?php } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php foreach ($bobi as $b) { ?><p><?= $b['total'] ?></p><?php } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php foreach ($bobi4 as $b) { ?><p><?= $b['total'] ?></p><?php } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php foreach ($bobi3 as $b) { ?><p><?= $b['total'] ?></p><?php } ?></td>
                         </tr>
                       </tbody>
                       <?php } ?>
