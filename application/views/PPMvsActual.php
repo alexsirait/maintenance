@@ -41,7 +41,7 @@ use PHPUnit\Framework\Constraint\Count;
                       <?php $i = 1; { ?>
                         <tr>
                           <td align=center style="white-space:nowrap;"><?php foreach ($bobi as $b) { ?><p><?= $b['total'] ?></p><?php } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php foreach ($bobi as $b) { ?><p><?= $b['total'] ?></p><?php } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php foreach ($bobi2 as $b) { ?><p><?= $b['total'] ?></p><?php } ?></td>
                           <td align=center style="white-space:nowrap;"><?php foreach ($bobi4 as $b) { ?><p><?= $b['total'] ?></p><?php } ?></td>
                           <td align=center style="white-space:nowrap;"><?php foreach ($bobi3 as $b) { ?><p><?= $b['total'] ?></p><?php } ?></td>
                         </tr>
