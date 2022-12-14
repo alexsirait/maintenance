@@ -47,6 +47,12 @@ class DashboardModel extends Ci_Model
 		return $this->db->get('preventive_maintenance_form')->num_rows();
 	}
 
+    public function buatangkawo()
+	{
+		$this->db->select('*');
+		return $this->db->get('wo_form')->num_rows();
+	}
+
 	public function edit_equipment($id)
 	{
 		return $this->db->get_where('equipment_form', ['id' => $id])->row_array();

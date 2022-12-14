@@ -82,13 +82,13 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
-                <p>Online Approval PM Checklist</p>
+                <h3><?= $wo_form ?></h3>
+                <p>Work Order E</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url(); ?>Report_Wo" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -110,60 +110,7 @@
                 <div class="tab-content p-0">
 
                   <!-- Start Chart -->                  
-                  <div id="chartContainer1" style="height: 300px; width: 100%; position: relative;"></div>
-                  <script type="text/javascript">
-                    window.onload = function () {
-                      var chart = new CanvasJS.Chart("chartContainer1", {  
-                        theme: "light2",          
-                        title:{
-                          text: "PPM vs Actual"              
-                        },
-
-                        data: [  //array of dataSeries     
-                        { //dataSeries - first quarter
-                        /*** Change type "column" to "bar", "area", "line" or "pie"***/        
-                        type: "column",
-                        name: "First Quarter",
-                        dataPoints: [
-                        { label: "January", y: <?= $hjanuary ?> },
-                        { label: "February", y: <?= $hfebruary ?> },
-                        { label: "March", y: <?= $hmarch ?> },                                    
-                        { label: "April", y: <?= $hapril ?> },
-                        { label: "May", y: <?= $hmay ?> },
-                        { label: "June", y: <?= $hjune ?> },
-                        { label: "July", y: <?= $hjuly ?> },
-                        { label: "August", y: <?= $haugust ?> },
-                        { label: "September", y: <?= $hseptember ?> },
-                        { label: "October", y: <?= $hoctober ?> },
-                        { label: "November", y: <?= $hnovember ?> },
-                        { label: "December", y: <?= $hdecember ?> }
-                        ]
-                      },
-                      { //dataSeries - second quarter
-
-                        type: "column",
-                        name: "Second Quarter",                
-                        dataPoints: [
-                        { label: "January", y: <?= $hjanuary_ppm ?> },
-                        { label: "February", y: <?= $hfebruary_ppm ?> },
-                        { label: "March", y: <?= $hmarch_ppm ?> },                                    
-                        { label: "April", y: <?= $hapril_ppm ?> },
-                        { label: "May", y: <?= $hmay_ppm ?> },
-                        { label: "June", y: <?= $hjune_ppm ?> },
-                        { label: "July", y: <?= $hjuly_ppm ?> },
-                        { label: "August", y: <?= $haugust_ppm ?> },
-                        { label: "September", y: <?= $hseptember_ppm ?> },
-                        { label: "October", y: <?= $hoctober_ppm ?> },
-                        { label: "November", y: <?= $hnovember_ppm ?> },
-                        { label: "December", y: <?= $hdecember_ppm ?> }
-                        ]
-                      }
-                      ]
-                    });
-                      chart.render();
-                    }
-                  </script>
-                  <script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/chart.js/canvasjs.min.js"></script>
+                  <div id="chartContainer1" style="height: 300px; width: 100%; position: relative;"></div>                  
                   <!-- End Chart -->
   
                 </div>
@@ -178,16 +125,6 @@
                   <i class="fas fa-map-marker-alt mr-1"></i>
                   Visitors
                 </h3>
-                <!-- card tools -->
-                <div class="card-tools">
-                  <button type="button" class="btn btn-primary btn-sm daterange" title="Date range">
-                    <i class="far fa-calendar-alt"></i>
-                  </button>
-                  <button type="button" class="btn btn-primary btn-sm" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
               </div>
               <div class="card-body">
                 <div id="world-map" style="height: 250px; width: 100%;"></div>
@@ -239,38 +176,22 @@
                 </div>
               </div>
               <div class="card-body">
+
                 <!-- Start Chart -->
-
                 <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
-                <script type="text/javascript">
-                 
-                </script>
-                <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
                 <!-- End Chart -->
               </div>
               <!-- /.card-body -->
               <div class="card-footer bg-transparent">
                 <div class="row">
-                  <div class="col-4 text-center">
-                    <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
-                           data-fgColor="#39CCCC">
-
-                    <div class="text-white">Mail-Orders</div>
+                  <div class="col-6 text-center">
+                    <input type="text" class="knob" data-readonly="true" value="<?= $hsumpretentive_calibration ?>" data-width="60" data-height="60" data-fgColor="#39CCCC">
+                    <div class="text-white">Pretentive & Calibration</div>
                   </div>
                   <!-- ./col -->
-                  <div class="col-4 text-center">
-                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
-                           data-fgColor="#39CCCC">
-
-                    <div class="text-white">Online</div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-4 text-center">
-                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
-                           data-fgColor="#39CCCC">
-
-                    <div class="text-white">In-Store</div>
+                  <div class="col-6 text-center">
+                    <input type="text" class="knob" data-readonly="true" value="<?= $hsumppm ?>" data-width="60" data-height="60" data-fgColor="#39CCCC">
+                    <div class="text-white">Pretentive</div>
                   </div>
                   <!-- ./col -->
                 </div>
@@ -329,125 +250,102 @@
   </div>
 
   <script>
- window.onload = function () {
-    var chart1 = new CanvasJS.Chart("chartContainer2",
-    {
-      title:{
-      text: "Multi-Series Line Chart"  
-      },
-      data: [
-      {        
-        type: "line",
-        dataPoints: [
-        { x: 10, y: 21 },
-        { x: 20, y: 25},
-        { x: 30, y: 20 },
-        { x: 40, y: 25 },
-        { x: 50, y: 27 },
-        { x: 60, y: 28 },
-        { x: 70, y: 28 },
-        { x: 80, y: 24 },
-        { x: 90, y: 26}
-      
-        ]
-      },
-        {        
-        type: "line",
-        dataPoints: [
-        { x: 10, y: 31 },
-        { x: 20, y: 35},
-        { x: 30, y: 30 },
-        { x: 40, y: 35 },
-        { x: 50, y: 35 },
-        { x: 60, y: 38 },
-        { x: 70, y: 38 },
-        { x: 80, y: 34 },
-        { x: 90, y: 44}
-      
-        ]
-      },
-        {        
-        type: "line",
-        dataPoints: [
-        { x: 10, y: 45 },
-        { x: 20, y: 50},
-        { x: 30, y: 40 },
-        { x: 40, y: 45 },
-        { x: 50, y: 45 },
-        { x: 60, y: 48 },
-        { x: 70, y: 43 },
-        { x: 80, y: 41 },
-        { x: 90, y: 28}
-      
-        ]
-      },
-        {        
-        type: "line",
-        dataPoints: [
-        { x: 10, y: 71 },
-        { x: 20, y: 55},
-        { x: 30, y: 50 },
-        { x: 40, y: 65 },
-        { x: 50, y: 95 },
-        { x: 60, y: 68 },
-        { x: 70, y: 28 },
-        { x: 80, y: 34 },
-        { x: 90, y: 14}
-      
-        ]
+    window.onload = function () {
+        var chart1 = new CanvasJS.Chart("chartContainer2",
+        {
+          title:{
+          text: "PPM vs Actual"  
+          },
+          data: [
+          {        
+            type: "line",
+            dataPoints: [
+            { label: "January", y: <?= $hjanuary ?> },
+            { label: "February", y: <?= $hfebruary ?>},
+            { label: "March", y: <?= $hmarch ?> },
+            { label: "April", y: <?= $hapril ?> },
+            { label: "May", y: <?= $hmay ?> },
+            { label: "June", y: <?= $hjune ?> },
+            { label: "July", y: <?= $hjuly ?> },
+            { label: "August", y: <?= $haugust ?> },
+            { label: "September", y: <?= $hseptember ?>},
+            { label: "October", y: <?= $hoctober ?>},
+            { label: "November", y: <?= $hnovember ?>},
+            { label: "December", y: <?= $hdecember ?>},
+          
+            ]
+          },
+            {        
+            type: "line",
+            dataPoints: [
+            { label: "January", y: <?= $hjanuary_ppm ?> },
+            { label: "February", y: <?= $hfebruary_ppm ?>},
+            { label: "March", y: <?= $hmarch_ppm ?> },
+            { label: "April", y: <?= $hapril_ppm ?> },
+            { label: "May", y: <?= $hmay_ppm ?> },
+            { label: "June", y: <?= $hjune_ppm ?> },
+            { label: "July", y: <?= $hjuly_ppm ?> },
+            { label: "August", y: <?= $haugust_ppm ?> },
+            { label: "September", y: <?= $hseptember_ppm ?>},
+            { label: "October", y: <?= $hoctober_ppm ?>},
+            { label: "November", y: <?= $hnovember_ppm ?>},
+            { label: "December", y: <?= $hdecember_ppm ?>},
+          
+            ]
+          }
+          ]
+        });
+
+        var chart2 = new CanvasJS.Chart("chartContainer1", {  
+            theme: "light2",          
+            title:{
+              text: "PPM vs Actual"              
+            },
+
+            data: [  //array of dataSeries     
+            { //dataSeries - first quarter
+            /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+            type: "column",
+            name: "First Quarter",
+            dataPoints: [
+            { label: "January", y: <?= $hjanuary ?> },
+            { label: "February", y: <?= $hfebruary ?> },
+            { label: "March", y: <?= $hmarch ?> },                                    
+            { label: "April", y: <?= $hapril ?> },
+            { label: "May", y: <?= $hmay ?> },
+            { label: "June", y: <?= $hjune ?> },
+            { label: "July", y: <?= $hjuly ?> },
+            { label: "August", y: <?= $haugust ?> },
+            { label: "September", y: <?= $hseptember ?> },
+            { label: "October", y: <?= $hoctober ?> },
+            { label: "November", y: <?= $hnovember ?> },
+            { label: "December", y: <?= $hdecember ?> }
+            ]
+          },
+          { //dataSeries - second quarter
+
+            type: "column",
+            name: "Second Quarter",                
+            dataPoints: [
+            { label: "January", y: <?= $hjanuary_ppm ?> },
+            { label: "February", y: <?= $hfebruary_ppm ?> },
+            { label: "March", y: <?= $hmarch_ppm ?> },                                    
+            { label: "April", y: <?= $hapril_ppm ?> },
+            { label: "May", y: <?= $hmay_ppm ?> },
+            { label: "June", y: <?= $hjune_ppm ?> },
+            { label: "July", y: <?= $hjuly_ppm ?> },
+            { label: "August", y: <?= $haugust_ppm ?> },
+            { label: "September", y: <?= $hseptember_ppm ?> },
+            { label: "October", y: <?= $hoctober_ppm ?> },
+            { label: "November", y: <?= $hnovember_ppm ?> },
+            { label: "December", y: <?= $hdecember_ppm ?> }
+            ]
+          }
+          ]
+        });
+          chart2.render();
+
+        chart1.render();
       }
-      ]
-    });
-
-    var chart2 = new CanvasJS.Chart("chartContainer1", {  
-        theme: "light2",          
-        title:{
-          text: "PPM vs Actual"              
-        },
-
-        data: [  //array of dataSeries     
-        { //dataSeries - first quarter
-        /*** Change type "column" to "bar", "area", "line" or "pie"***/        
-        type: "column",
-        name: "First Quarter",
-        dataPoints: [
-        { label: "January", y: <?= $hjanuary ?> },
-        { label: "February", y: <?= $hfebruary ?> },
-        { label: "March", y: <?= $hmarch ?> },                                    
-        { label: "April", y: <?= $hapril ?> },
-        { label: "May", y: <?= $hmay ?> },
-        { label: "June", y: <?= $hjune ?> },
-        { label: "July", y: <?= $hjuly ?> },
-        { label: "August", y: <?= $haugust ?> },
-        { label: "September", y: <?= $hseptember ?> },
-        { label: "October", y: <?= $hoctober ?> },
-        { label: "November", y: <?= $hnovember ?> },
-        { label: "December", y: <?= $hdecember ?> }
-        ]
-      },
-      { //dataSeries - second quarter
-
-        type: "column",
-        name: "Second Quarter",                
-        dataPoints: [
-        { label: "January", y: <?= $hjanuary_ppm ?> },
-        { label: "February", y: <?= $hfebruary_ppm ?> },
-        { label: "March", y: <?= $hmarch_ppm ?> },                                    
-        { label: "April", y: <?= $hapril_ppm ?> },
-        { label: "May", y: <?= $hmay_ppm ?> },
-        { label: "June", y: <?= $hjune_ppm ?> },
-        { label: "July", y: <?= $hjuly_ppm ?> },
-        { label: "August", y: <?= $haugust_ppm ?> },
-        { label: "September", y: <?= $hseptember_ppm ?> },
-        { label: "October", y: <?= $hoctober_ppm ?> },
-        { label: "November", y: <?= $hnovember_ppm ?> },
-        { label: "December", y: <?= $hdecember_ppm ?> }
-        ]
-      }
-      ]
-    });
-      chart2.render();
-
-    chart1.render();
-  }
   </script>
+  <script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/chart.js/canvasjs.min.js"></script>

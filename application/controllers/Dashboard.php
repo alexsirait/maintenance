@@ -13,6 +13,7 @@ class Dashboard extends CI_Controller {
 	{
 		$data["equipment_form"] = $this->DashboardModel->buatangka();
 		$data["preventive_maintenance_form"] = $this->DashboardModel->buatangkapreventive();
+		$data["wo_form"] = $this->DashboardModel->buatangkawo();
 
 		$data['TotalD'] = $this->DashboardModel->hitungJumlahPretentive();
 		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww01 = "D" || ww02 = "D" || ww03 = "D" || ww04 = "D" || ww05 = "D" || ww06 = "D" || ww07 = "D" || ww08 = "D" || ww09 = "D" || ww10 = "D" || ww10_1 = "D" || ww11 = "D" || ww12 = "D" || ww13 = "D" || ww14 = "D" || ww14_1 = "D" || ww15 = "D" || ww16 = "D" || ww17 = "D" || ww18 = "D" || ww18_1 = "D" || ww19 = "D" || ww20 = "D" || ww21 = "D" || ww22 = "D" || ww23 = "D" || ww23_1 = "D" || ww24 = "D" || ww25 = "D" || ww26 = "D" || ww27 = "D" || ww27_1 = "D" || ww28 = "D" || ww29 = "D" || ww30 = "D" || ww31 = "D" || ww32 = "D" || ww33 = "D" || ww34 = "D" || ww35 = "D" || ww36 = "D" || ww37 = "D" || ww38 = "D" || ww39 = "D" || ww40 = "D" || ww40_1 = "D" || ww41 = "D" || ww42 = "D" || ww43 = "D" || ww44 = "D" || ww45 = "D" || ww45_1 = "D" || ww46 = "D" || ww47 = "D" || ww48 = "D" || ww49 = "D" || ww49_1 = "D" || ww50 = "D" || ww51 = "D" || ww52 = "D" || ww53 = "D"';
@@ -31,11 +32,19 @@ class Dashboard extends CI_Controller {
 		$alexganteng4 = $this->db->query($query4);
 		$data['bobi4'] = $alexganteng4->result_array();
 
+		foreach ($data['bobi2'] as $b) { $pretentive_calibration = $b['total']; }
+		foreach ($data['bobi4'] as $b) { $ppm = $b['total']; }
 		foreach ($data['bobi'] as $b) { $aji1 = $b['total']; }
 		foreach ($data['bobi2'] as $b) { $aji2 = $b['total']; }
 		foreach ($data['bobi3'] as $b) { $aji3 = $b['total']; }
 		foreach ($data['bobi4'] as $b) { $aji4 = $b['total']; }
 		
+		$sumpretentive_calibration = $pretentive_calibration;
+		$data['hsumpretentive_calibration'] = round($sumpretentive_calibration);
+
+		$sumppm = $ppm;
+		$data['hsumppm'] = round($sumppm);
+
 		$sumajalah = ($aji1 + $aji2 + $aji3 + $aji4) / 4;
 		$data['apaajalaa'] = round($sumajalah / $data["preventive_maintenance_form"] * 100, 2);
 
