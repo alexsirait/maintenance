@@ -108,14 +108,64 @@
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content p-0">
-                  <!-- Morris chart - Sales -->
-                  <div class="chart tab-pane active" id="revenue-chart"
-                       style="position: relative; height: 300px;">
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                   </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
-                  </div>
+
+                  <!-- Start Chart -->                  
+                  <div id="chartContainer1" style="height: 300px; width: 100%; position: relative;"></div>
+                  <script type="text/javascript">
+                    window.onload = function () {
+                      var chart = new CanvasJS.Chart("chartContainer1", {  
+                        theme: "light2",          
+                        title:{
+                          text: "PPM vs Actual"              
+                        },
+
+                        data: [  //array of dataSeries     
+                        { //dataSeries - first quarter
+                        /*** Change type "column" to "bar", "area", "line" or "pie"***/        
+                        type: "column",
+                        name: "First Quarter",
+                        dataPoints: [
+                        { label: "January", y: <?= $hjanuary ?> },
+                        { label: "February", y: <?= $hfebruary ?> },
+                        { label: "March", y: <?= $hmarch ?> },                                    
+                        { label: "April", y: <?= $hapril ?> },
+                        { label: "May", y: <?= $hmay ?> },
+                        { label: "June", y: <?= $hjune ?> },
+                        { label: "July", y: <?= $hjuly ?> },
+                        { label: "August", y: <?= $haugust ?> },
+                        { label: "September", y: <?= $hseptember ?> },
+                        { label: "October", y: <?= $hoctober ?> },
+                        { label: "November", y: <?= $hnovember ?> },
+                        { label: "December", y: <?= $hdecember ?> }
+                        ]
+                      },
+                      { //dataSeries - second quarter
+
+                        type: "column",
+                        name: "Second Quarter",                
+                        dataPoints: [
+                        { label: "January", y: <?= $hjanuary_ppm ?> },
+                        { label: "February", y: <?= $hfebruary_ppm ?> },
+                        { label: "March", y: <?= $hmarch_ppm ?> },                                    
+                        { label: "April", y: <?= $hapril_ppm ?> },
+                        { label: "May", y: <?= $hmay_ppm ?> },
+                        { label: "June", y: <?= $hjune_ppm ?> },
+                        { label: "July", y: <?= $hjuly_ppm ?> },
+                        { label: "August", y: <?= $haugust_ppm ?> },
+                        { label: "September", y: <?= $hseptember_ppm ?> },
+                        { label: "October", y: <?= $hoctober_ppm ?> },
+                        { label: "November", y: <?= $hnovember_ppm ?> },
+                        { label: "December", y: <?= $hdecember_ppm ?> }
+                        ]
+                      }
+                      ]
+                    });
+                      chart.render();
+                    }
+                  </script>
+                  <script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/chart.js/canvasjs.min.js"></script>
+                  <!-- End Chart -->
+  
                 </div>
               </div><!-- /.card-body -->
             </div>
@@ -189,7 +239,86 @@
                 </div>
               </div>
               <div class="card-body">
-                <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                <!-- Start Chart -->
+
+                <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+                <script type="text/javascript">
+                  window.onload = function () {
+                    var chart = new CanvasJS.Chart("chartContainer2",
+                    {
+                      title:{
+                      text: "Multi-Series Line Chart"  
+                      },
+                      data: [
+                      {        
+                        type: "line",
+                        dataPoints: [
+                        { x: 10, y: 21 },
+                        { x: 20, y: 25},
+                        { x: 30, y: 20 },
+                        { x: 40, y: 25 },
+                        { x: 50, y: 27 },
+                        { x: 60, y: 28 },
+                        { x: 70, y: 28 },
+                        { x: 80, y: 24 },
+                        { x: 90, y: 26}
+                      
+                        ]
+                      },
+                        {        
+                        type: "line",
+                        dataPoints: [
+                        { x: 10, y: 31 },
+                        { x: 20, y: 35},
+                        { x: 30, y: 30 },
+                        { x: 40, y: 35 },
+                        { x: 50, y: 35 },
+                        { x: 60, y: 38 },
+                        { x: 70, y: 38 },
+                        { x: 80, y: 34 },
+                        { x: 90, y: 44}
+                      
+                        ]
+                      },
+                        {        
+                        type: "line",
+                        dataPoints: [
+                        { x: 10, y: 45 },
+                        { x: 20, y: 50},
+                        { x: 30, y: 40 },
+                        { x: 40, y: 45 },
+                        { x: 50, y: 45 },
+                        { x: 60, y: 48 },
+                        { x: 70, y: 43 },
+                        { x: 80, y: 41 },
+                        { x: 90, y: 28}
+                      
+                        ]
+                      },
+                        {        
+                        type: "line",
+                        dataPoints: [
+                        { x: 10, y: 71 },
+                        { x: 20, y: 55},
+                        { x: 30, y: 50 },
+                        { x: 40, y: 65 },
+                        { x: 50, y: 95 },
+                        { x: 60, y: 68 },
+                        { x: 70, y: 28 },
+                        { x: 80, y: 34 },
+                        { x: 90, y: 14}
+                      
+                        ]
+                      }
+                      ]
+                    });
+
+                    chart.render();
+                  }
+                </script>
+                <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+                <!-- End Chart -->
               </div>
               <!-- /.card-body -->
               <div class="card-footer bg-transparent">
