@@ -55,7 +55,8 @@
                                                 <table class="table table-bordered border">
                                                     <tbody>
                                                         <tr>
-                                                            <th>Order by</th>
+                                                            <td><i class="fas fa-sign-in-alt"></i></td>
+                                                            <th class="text-left">Order by</th>
                                                             <td>
                                                                 <span><?php echo $row->order_by; ?></span>
                                                             </td>
@@ -64,7 +65,8 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <th>Received by</th>
+                                                            <td><i class="fas fa-sign-out-alt"></i></td>
+                                                            <th class="text-left">Received by</th>
                                                             <td>
                                                                 <span><?php echo $row->order_by; ?></span>
                                                             </td>
