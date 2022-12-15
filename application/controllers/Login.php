@@ -15,8 +15,12 @@ class Login extends CI_Controller {
             'name' => 'Alex Sirait', 
             'department' => 'BOSS', 
             'emp_id' => '123456', 
-        );  
-        if ($user['email']=='alex@gmail.com' && $user['pass']=='123')   
+        );
+
+        $email =  $this->input->post('email');  
+        $pass = $this->input->post('pass');  
+
+        if ($email == $user['email'] && $pass == $user['pass'])   
         {  
 			$this->session->set_userdata(array('user'=>$user));  
             redirect('dashboard');  
@@ -28,7 +32,6 @@ class Login extends CI_Controller {
     }  
     public function logout()  
     {  
-        //removing session  
         $this->session->unset_userdata('user');  
         redirect("Login");  
     }
