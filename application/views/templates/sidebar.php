@@ -154,7 +154,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url('login') ?>" class="nav-link">
+            <a href="<?= base_url() ?>Login/logout" class="nav-link">
               <i class="fas fa-sign-out-alt"></i>
               <p class="ml-1">
                 Logout
