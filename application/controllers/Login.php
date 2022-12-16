@@ -43,6 +43,11 @@ class Login extends CI_Controller {
 		$this->load->view('change_password');
 		$this->load->view('templates/footer');
     }
+
+    public function block()
+    {
+        $this->load->view('templates/error');
+    }
   
 }  
 ?>  
