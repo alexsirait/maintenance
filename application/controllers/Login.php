@@ -23,7 +23,7 @@ class Login extends CI_Controller {
         if ($email == $user['email'] && $pass == $user['pass'])   
         {  
 			$this->session->set_userdata(array('user'=>$user));  
-            redirect('dashboard');  
+            redirect(base_url('dashboard'));  
         }  
         else{  
             $data['error'] = 'Your Account is Invalid';  
@@ -33,7 +33,7 @@ class Login extends CI_Controller {
     public function logout()  
     {  
         $this->session->unset_userdata('user');  
-        redirect("Login");  
+        redirect(base_url("Login"));  
     }
     
     public function change_password()
