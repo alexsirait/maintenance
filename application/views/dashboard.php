@@ -69,7 +69,7 @@
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3><?= $apaajalaa ?> %</h3>
-                <p>PPM vs Actual</p>
+                <p>Actual PPM</p>
               </div>
               <div class="icon">
                 <i class="nav-icon fas fa-table"></i>
@@ -103,7 +103,7 @@
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
-                  PPM vs Actual
+                  Actual vs PPM
                 </h3>
               </div><!-- /.card-header -->
               <div class="card-body">
@@ -233,12 +233,12 @@
                 <div class="row">
                   <div class="col-6 text-center">
                     <input type="text" class="knob" data-readonly="true" value="<?= $hsumpretentive_calibration ?>" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                    <div class="text-white">Pretentive & Calibration</div>
+                    <div class="text-white">Preventive & Calibration</div>
                   </div>
                   <!-- ./col -->
                   <div class="col-6 text-center">
                     <input type="text" class="knob" data-readonly="true" value="<?= $hsumppm ?>" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                    <div class="text-white">Pretentive</div>
+                    <div class="text-white">Preventive</div>
                   </div>
                   <!-- ./col -->
                 </div>
@@ -259,102 +259,182 @@
 
   <script>
     window.onload = function () {
-        var chart1 = new CanvasJS.Chart("chartContainer2",
-        {
-          // theme: "light2",
-          title:{
-          text: "PPM vs Actual"  
-          },
-          data: [
-          {        
-            type: "line",
-            dataPoints: [
-            { label: "January", y: <?= $hjanuary ?> },
-            { label: "February", y: <?= $hfebruary ?>},
-            { label: "March", y: <?= $hmarch ?> },
-            { label: "April", y: <?= $hapril ?> },
-            { label: "May", y: <?= $hmay ?> },
-            { label: "June", y: <?= $hjune ?> },
-            { label: "July", y: <?= $hjuly ?> },
-            { label: "August", y: <?= $haugust ?> },
-            { label: "September", y: <?= $hseptember ?>},
-            { label: "October", y: <?= $hoctober ?>},
-            { label: "November", y: <?= $hnovember ?>},
-            { label: "December", y: <?= $hdecember ?>},
-          
-            ]
-          },
-            {        
-            type: "line",
-            dataPoints: [
-            { label: "January", y: <?= $hjanuary_ppm ?> },
-            { label: "February", y: <?= $hfebruary_ppm ?>},
-            { label: "March", y: <?= $hmarch_ppm ?> },
-            { label: "April", y: <?= $hapril_ppm ?> },
-            { label: "May", y: <?= $hmay_ppm ?> },
-            { label: "June", y: <?= $hjune_ppm ?> },
-            { label: "July", y: <?= $hjuly_ppm ?> },
-            { label: "August", y: <?= $haugust_ppm ?> },
-            { label: "September", y: <?= $hseptember_ppm ?>},
-            { label: "October", y: <?= $hoctober_ppm ?>},
-            { label: "November", y: <?= $hnovember_ppm ?>},
-            { label: "December", y: <?= $hdecember_ppm ?>},
-          
-            ]
-          }
-          ]
-        });
 
-        var chart2 = new CanvasJS.Chart("chartContainer1", {  
-            theme: "light2",          
-            title:{
-              text: "PPM vs Actual"              
-            },
+    var chart1 = new CanvasJS.Chart("chartContainer1", {
+      animationEnabled: true,
+      theme: "light2",
+      title:{
+        text: "Actual vs PPM"
+      },	
+      axisY: {
+        title: "",
+        titleFontColor: "#4F81BC",
+        lineColor: "#4F81BC",
+        labelFontColor: "#4F81BC",
+        tickColor: "#4F81BC"
+      },
+      axisY2: {
+        title: "",
+        titleFontColor: "#C0504E",
+        lineColor: "#C0504E",
+        labelFontColor: "#C0504E",
+        tickColor: "#C0504E"
+      },	
+      toolTip: {
+        shared: true
+      },
+      legend: {
+        cursor:"pointer",
+        itemclick: toggleDataSeries1
+      },
+      data: [{
+        type: "column",
+        name: "Actual",
+        legendText: "Actual",
+        showInLegend: true, 
+        dataPoints:[
+          { label: "January", y: <?= $hjanuary ?> },
+          { label: "February", y: <?= $hfebruary ?> },
+          { label: "March", y: <?= $hmarch ?> },
+          { label: "April", y: <?= $hapril ?> },
+          { label: "May", y: <?= $hmay ?> },
+          { label: "June", y: <?= $hjune ?> },
+          { label: "July", y: <?= $hjuly ?> },
+          { label: "August", y: <?= $haugust ?> },
+          { label: "September", y: <?= $hseptember ?> },
+          { label: "October", y: <?= $hoctober ?> },
+          { label: "November", y: <?= $hnovember ?> },
+          { label: "December", y: <?= $hdecember ?> },
+        ]
+      },
+      {
+        type: "column",	
+        name: "Preventive",
+        legendText: "Preventive",
+        axisYType: "secondary",
+        showInLegend: true,
+        dataPoints:[
+          { label: "January", y: <?= $hjanuary_ppm ?> },
+          { label: "February", y: <?= $hfebruary_ppm ?> },
+          { label: "March", y: <?= $hmarch_ppm ?> },
+          { label: "April", y: <?= $hapril_ppm ?> },
+          { label: "May", y: <?= $hmay_ppm ?> },
+          { label: "June", y: <?= $hjune_ppm ?> },
+          { label: "July", y: <?= $hjuly_ppm ?> },
+          { label: "August", y: <?= $haugust_ppm ?> },
+          { label: "September", y: <?= $hseptember_ppm ?> },
+          { label: "October", y: <?= $hoctober_ppm ?> },
+          { label: "November", y: <?= $hnovember_ppm ?> },
+          { label: "December", y: <?= $hdecember_ppm ?> },
+        ]
+      }]
+    });
 
-            data: [  //array of dataSeries     
-            { //dataSeries - first quarter
-            /*** Change type "column" to "bar", "area", "line" or "pie"***/        
-            type: "column",
-            name: "First Quarter",
-            dataPoints: [
-            { label: "January", y: <?= $hjanuary ?> },
-            { label: "February", y: <?= $hfebruary ?> },
-            { label: "March", y: <?= $hmarch ?> },                                    
-            { label: "April", y: <?= $hapril ?> },
-            { label: "May", y: <?= $hmay ?> },
-            { label: "June", y: <?= $hjune ?> },
-            { label: "July", y: <?= $hjuly ?> },
-            { label: "August", y: <?= $haugust ?> },
-            { label: "September", y: <?= $hseptember ?> },
-            { label: "October", y: <?= $hoctober ?> },
-            { label: "November", y: <?= $hnovember ?> },
-            { label: "December", y: <?= $hdecember ?> }
-            ]
-          },
-          { //dataSeries - second quarter
+    var chart2 = new CanvasJS.Chart("chartContainer2", {
+    theme:"light2",
+    animationEnabled: true,
+    title:{
+      text: "PPM vs Actual"
+    },
+    axisY :{
+      title: "Number of PPM",
+      suffix: ""
+    },
+    toolTip: {
+      shared: "true"
+    },
+    legend:{
+      cursor:"pointer",
+      itemclick : toggleDataSeries2
+    },
+    data: [{
+      type: "spline",
+      visible: true,
+      showInLegend: true,
+      yValueFormatString: "##",
+      name: "Actual",
+      dataPoints: [
+        { label: "January", y: <?= $hjanuary ?> },
+        { label: "February", y: <?= $hfebruary ?> },
+        { label: "March", y: <?= $hmarch ?> },
+        { label: "April", y: <?= $hapril ?> },
+        { label: "May", y: <?= $hmay ?> },
+        { label: "June", y: <?= $hjune ?> },
+        { label: "July", y: <?= $hjuly ?> },
+        { label: "August", y: <?= $haugust ?> },
+        { label: "September", y: <?= $hseptember ?> },
+        { label: "October", y: <?= $hoctober ?> },
+        { label: "November", y: <?= $hnovember ?> },
+        { label: "December", y: <?= $hdecember ?> }
+      ]
+    },
+    {
+      type: "spline", 
+      showInLegend: true,
+      visible: true,
+      yValueFormatString: "##",
+      name: "Preventive",
+      dataPoints: [
+        { label: "January", y: <?= $hjanuary_ppm ?> },
+        { label: "February", y: <?= $hfebruary_ppm ?> },
+        { label: "March", y: <?= $hmarch_ppm ?> },
+        { label: "April", y: <?= $hapril_ppm ?> },
+        { label: "May", y: <?= $hmay_ppm ?> },
+        { label: "June", y: <?= $hjune_ppm ?> },
+        { label: "July", y: <?= $hjuly_ppm ?> },
+        { label: "August", y: <?= $haugust_ppm ?> },
+        { label: "September", y: <?= $hseptember_ppm ?> },
+        { label: "October", y: <?= $hoctober_ppm ?> },
+        { label: "November", y: <?= $hnovember_ppm ?> },
+        { label: "December", y: <?= $hdecember_ppm ?> }
+      ]
+    },
+    {
+      type: "spline",
+      visible: true,
+      showInLegend: true,
+      yValueFormatString: "##",
+      name: "Preventive Calibration",
+      dataPoints: [
+        { label: "January", y: <?= $hjanuary_ppm_c ?> },
+        { label: "February", y: <?= $hfebruary_ppm_c ?> },
+        { label: "March", y: <?= $hmarch_ppm_c ?> },
+        { label: "April", y: <?= $hapril_ppm_c ?> },
+        { label: "May", y: <?= $hmay_ppm_c ?> },
+        { label: "June", y: <?= $hjune_ppm_c ?> },
+        { label: "July", y: <?= $hjuly_ppm_c ?> },
+        { label: "August", y: <?= $haugust_ppm_c ?> },
+        { label: "September", y: <?= $hseptember_ppm_c ?> },
+        { label: "October", y: <?= $hoctober_ppm_c ?> },
+        { label: "November", y: <?= $hnovember_ppm_c ?> },
+        { label: "December", y: <?= $hdecember_ppm_c ?> }
+      ]
+    }]
+  });
 
-            type: "column",
-            name: "Second Quarter",                
-            dataPoints: [
-            { label: "January", y: <?= $hjanuary_ppm ?> },
-            { label: "February", y: <?= $hfebruary_ppm ?> },
-            { label: "March", y: <?= $hmarch_ppm ?> },                                    
-            { label: "April", y: <?= $hapril_ppm ?> },
-            { label: "May", y: <?= $hmay_ppm ?> },
-            { label: "June", y: <?= $hjune_ppm ?> },
-            { label: "July", y: <?= $hjuly_ppm ?> },
-            { label: "August", y: <?= $haugust_ppm ?> },
-            { label: "September", y: <?= $hseptember_ppm ?> },
-            { label: "October", y: <?= $hoctober_ppm ?> },
-            { label: "November", y: <?= $hnovember_ppm ?> },
-            { label: "December", y: <?= $hdecember_ppm ?> }
-            ]
-          }
-          ]
-        });
-          chart2.render();
+  chart1.render();
 
-        chart1.render();
-      }
+  chart2.render();
+
+  function toggleDataSeries1(e) {
+    if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+      e.dataSeries.visible = false;
+    }
+    else {
+      e.dataSeries.visible = true;
+    }
+    chart1.render();
+  }
+
+  function toggleDataSeries2(e){
+    if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+      e.dataSeries.visible = false;
+    } else {
+      e.dataSeries.visible = true;
+    }
+    chart.render();
+  }
+
+  }
   </script>
   <script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/chart.js/canvasjs.min.js"></script>

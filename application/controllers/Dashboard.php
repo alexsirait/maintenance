@@ -242,6 +242,103 @@ class Dashboard extends CI_Controller {
 		$sumdecember_ppm = $datadecember_ppm;
 		$data['hdecember_ppm'] = round($sumdecember_ppm);
 
+		// Grafik PPM Calibration
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww01 = "P/C" || ww02 = "P/C" || ww03 = "P/C" || ww04 = "P/C" || ww05 = "P/C"';
+		$january_ppm_c = $this->db->query($query);
+		$data['january_ppm_c'] = $january_ppm_c->result_array();
+
+		foreach ($data['january_ppm_c'] as $month) { $datajanuary_ppm_c = $month['total'];}
+		$sumjanuary_ppm_c = $datajanuary_ppm_c;
+		$data['hjanuary_ppm_c'] = round($sumjanuary_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww06 = "P/C" || ww07 = "P/C" || ww08 = "P/C" || ww09 = "P/C" || ww10 = "P/C"';
+		$february_ppm_c = $this->db->query($query);
+		$data['february_ppm_c'] = $february_ppm_c->result_array();
+
+		foreach ($data['february_ppm_c'] as $month) { $datafebruary_ppm_c = $month['total'];}
+		$sumfebruary_ppm_c = $datafebruary_ppm_c;
+		$data['hfebruary_ppm_c'] = round($sumfebruary_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww10_1 = "P/C" || ww11 = "P/C" || ww12 = "P/C" || ww13 = "P/C" || ww14 = "P/C"';
+		$march_ppm_c = $this->db->query($query);
+		$data['march_ppm_c'] = $march_ppm_c->result_array();
+
+		foreach ($data['march_ppm_c'] as $month) { $datamarch_ppm_c = $month['total'];}
+		$summarch_ppm_c = $datamarch_ppm_c;
+		$data['hmarch_ppm_c'] = round($summarch_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww14_1 = "P/C" || ww15 = "P/C" || ww16 = "P/C" || ww17 = "P/C" || ww18 = "P/C"';
+		$april_ppm_c = $this->db->query($query);
+		$data['april_ppm_c'] = $april_ppm_c->result_array();
+
+		foreach ($data['april_ppm_c'] as $month) { $dataapril_ppm_c = $month['total'];}
+		$sumapril_ppm_c = $dataapril_ppm_c;
+		$data['hapril_ppm_c'] = round($sumapril_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww18_1 = "P/C" || ww19 = "P/C" || ww20 = "P/C" || ww21 = "P/C" || ww22 = "P/C" || ww23 = "P/C"';
+		$may_ppm_c = $this->db->query($query);
+		$data['may_ppm_c'] = $may_ppm_c->result_array();
+
+		foreach ($data['may_ppm_c'] as $month) { $datamay_ppm_c = $month['total'];}
+		$summay_ppm_c = $datamay_ppm_c;
+		$data['hmay_ppm_c'] = round($summay_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww23_1 = "P/C" || ww24 = "P/C" || ww25 = "P/C" || ww26 = "P/C" || ww27 = "P/C"';
+		$june_ppm_c = $this->db->query($query);
+		$data['june_ppm_c'] = $june_ppm_c->result_array();
+
+		foreach ($data['june_ppm_c'] as $month) { $datajune_ppm_c = $month['total'];}
+		$sumjune_ppm_c = $datajune_ppm_c;
+		$data['hjune_ppm_c'] = round($sumjune_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww27_1 = "P/C" || ww28 = "P/C" || ww29 = "P/C" || ww30 = "P/C" || ww31 = "P/C"';
+		$july_ppm_c = $this->db->query($query);
+		$data['july_ppm_c'] = $july_ppm_c->result_array();
+
+		foreach ($data['july_ppm_c'] as $month) { $datajuly_ppm_c = $month['total'];}
+		$sumjuly_ppm_c = $datajuly_ppm_c;
+		$data['hjuly_ppm_c'] = round($sumjuly_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww32 = "P/C" || ww33 = "P/C" || ww34 = "P/C" || ww35 = "P/C" || ww36 = "P/C"';
+		$august_ppm_c = $this->db->query($query);
+		$data['august_ppm_c'] = $august_ppm_c->result_array();
+
+		foreach ($data['august_ppm_c'] as $month) { $dataaugust_ppm_c = $month['total'];}
+		$sumaugust_ppm_c = $dataaugust_ppm_c;
+		$data['haugust_ppm_c'] = round($sumaugust_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww37 = "P/C" || ww38 = "P/C" || ww39 = "P/C" || ww40 = "P/C"';
+		$september_ppm_c = $this->db->query($query);
+		$data['september_ppm_c'] = $september_ppm_c->result_array();
+
+		foreach ($data['september_ppm_c'] as $month) { $dataseptember_ppm_c = $month['total'];}
+		$sumseptember_ppm_c = $dataseptember_ppm_c;
+		$data['hseptember_ppm_c'] = round($sumseptember_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww40_1 = "P/C" || ww41 = "P/C" || ww42 = "P/C" || ww43 = "P/C" || ww44 = "P/C" || ww45 = "P/C"';
+		$october_ppm_c = $this->db->query($query);
+		$data['october_ppm_c'] = $october_ppm_c->result_array();
+
+		foreach ($data['october_ppm_c'] as $month) { $dataoctober_ppm_c = $month['total'];}
+		$sumoctober_ppm_c = $dataoctober_ppm_c;
+		$data['hoctober_ppm_c'] = round($sumoctober_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww45_1 = "P/C" || ww46 = "P/C" || ww47 = "P/C" || ww48 = "P/C" || ww49 = "P/C"';
+		$november_ppm_c = $this->db->query($query);
+		$data['november_ppm_c'] = $november_ppm_c->result_array();
+
+		foreach ($data['november_ppm_c'] as $month) { $datanovember_ppm_c = $month['total'];}
+		$sumnovember_ppm_c = $datanovember_ppm_c;
+		$data['hnovember_ppm_c'] = round($sumnovember_ppm_c);
+
+		$query = 'SELECT count(*) AS total FROM `preventive_maintenance_form` WHERE ww49_1 = "P/C" || ww50 = "P/C" || ww51 = "P/C" || ww52 = "P/C" || ww53 = "P/C"';
+		$december_ppm_c = $this->db->query($query);
+		$data['december_ppm_c'] = $december_ppm_c->result_array();
+
+		foreach ($data['december_ppm_c'] as $month) { $datadecember_ppm_c = $month['total'];}
+		$sumdecember_ppm_c = $datadecember_ppm_c;
+		$data['hdecember_ppm_c'] = round($sumdecember_ppm_c);
+
 		$this->load->view('templates/header');
         $this->load->view('templates/sidebar');
 		$this->load->view('dashboard', $data);
