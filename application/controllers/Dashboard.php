@@ -350,16 +350,20 @@ class Dashboard extends CI_Controller {
 
 	public function add_equipment()
 	{
-		$this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
 		$this->load->view('add_equipment');
 		$this->load->view('templates/footer');
 	}
 
 	public function add_maintenance()
 	{
-		$this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+		
+		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
 		$this->load->view('add_maintenance');
 		$this->load->view('templates/footer');
 	}
