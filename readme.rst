@@ -2,6 +2,8 @@
 Cladtek | Maintenance System
 ###################
 
-Made with love
+Developed with ❤️ by
 
-yahh
+Alex Sirait,
+Aji Utomo,
+Sari Anastasya,
