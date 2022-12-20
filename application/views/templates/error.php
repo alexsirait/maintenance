@@ -343,7 +343,7 @@ svg#picklerick .st4 {
 	<div class="svgcontainer">
 		<div class="subcont">
 			<div class="topconvo">
-				<span>Cladtek</span><br />your portal maintenance page not found ...
+				<span><img src="<?php echo base_url() ?>assets/dist/img/Blue.png" alt="AdminLTELogo" height="200" width="200"></span><br />your portal maintenance page not found ...
 			</div>
 			<svg version="1.1" id="fourohfour" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 			    y="0px" viewBox="0 0 265.5 114" style="enable-background:new 0 0 265.5 114;" xml:space="preserve">

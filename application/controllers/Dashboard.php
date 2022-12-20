@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
-		// is_logged_in();
+		is_logged_in();
 	}
 
 	public function index()
@@ -471,8 +471,10 @@ class Dashboard extends CI_Controller {
 		$this->form_validation->set_rules('pic', 'Pic', 'required');		
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('templates/header');
-			$this->load->view('templates/sidebar');
+			$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+
+			$this->load->view('templates/header', $data);
+			$this->load->view('templates/sidebar', $data);
 			$this->load->view('ubah_equipment',$data);
 			$this->load->view('templates/footer');
 			
@@ -660,14 +662,15 @@ class Dashboard extends CI_Controller {
 	public function ubah_preventive($id)
 	{
 		$data["preventive_maintenance_form"] = $this->DashboardModel->edit_preventive($id);
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
 
 		$this->form_validation->set_rules('machine', 'Machine', 'required');
 		$this->form_validation->set_rules('description', 'Applicable Machine Description', 'required');
 		$this->form_validation->set_rules('section', 'Section Required', 'required');		
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('templates/header');
-			$this->load->view('templates/sidebar');
+			$this->load->view('templates/header',$data);
+			$this->load->view('templates/sidebar',$data);
 			$this->load->view('ubah_maintenance',$data);
 			$this->load->view('templates/footer');
 			

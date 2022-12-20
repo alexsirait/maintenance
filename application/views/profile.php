@@ -19,26 +19,26 @@
       <!-- mulai disini -->
         <div class="card">
             <div class="card-header">
-                <h4><span class="text-info"><?= $_SESSION['user']['name'];?></span> | <span><?= $_SESSION['user']['emp_id'];?></span></h4>
+                <h4><span class="text-info"><?= $user['employee_name'];?></span> | <span><?= $user['employee_id'];?></span></h4>
             </div>
             <div class="card-body">
                 <div class="col-md-6">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Employee ID</label>
-                            <input class="form-control" value="<?php echo $_SESSION['user']['emp_id'] ?>" readonly />
+                            <input class="form-control" value="<?= $user['employee_id'];?>" readonly />
                         </div>
                         <div class="form-group">
                             <label>Name</label>
-                            <input class="form-control" value="<?php echo $_SESSION['user']['name'] ?>" readonly />
+                            <input class="form-control" value="<?= $user['employee_name'];?>" readonly />
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input class="form-control" value="<?php echo $_SESSION['user']['email'] ?>" readonly />
+                            <input class="form-control" value="<?= $user['email'];?>" readonly />
                         </div>
                         <div class="form-group">
                             <label>Department</label>
-                            <input class="form-control" value="<?php echo $_SESSION['user']['department'] ?>" readonly />
+                            <input class="form-control" value="<?= $user['department_id']; ?>" readonly />
                         </div>
                     </div>
                 </div>

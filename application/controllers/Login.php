@@ -1,8 +1,7 @@
 <?php  
 defined('BASEPATH') OR exit('No direct script access allowed');  
   
-class Login extends CI_Controller {  
-      
+class Login extends CI_Controller {
     public function index()
     {
         if ($this->session->userdata('email')) {
@@ -77,7 +76,7 @@ class Login extends CI_Controller {
                 ];
                 $this->session->set_userdata($data);
 
-                redirect('Dashboard');
+                redirect(base_url('dashboard'));
             } else {
                 // Jika password salah, tampilkan alert menggunakan flashdata dan arahkan ke halaman auth/index
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password is incorrect!<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>');
@@ -120,14 +119,16 @@ class Login extends CI_Controller {
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been Log out<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>');
 
-        redirect();
+        redirect(base_url('login'));
     }
     
     public function change_password()
     {
-        $this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
-		$this->load->view('change_password');
+        $data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('change_password', $data);
 		$this->load->view('templates/footer');
     }
 

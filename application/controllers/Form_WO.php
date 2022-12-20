@@ -2,11 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Form_WO extends CI_Controller {
+	
+	public function __construct()
+	{
+		parent::__construct();
+		is_logged_in();
+	}
+	
 	public function index()
 	{
-		$this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
-		$this->load->view('form_wo');
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+		$this->load->view('form_wo', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -163,9 +172,11 @@ class Form_WO extends CI_Controller {
 			$this->session->set_flashdata('add_success', 'MAINTENANCE WORK ORDER Form has been successfully added. ✅');
 			redirect('report_wo');
 		} else {
-			$this->load->view('templates/header');
-			$this->load->view('templates/sidebar');
-			$this->load->view('form_wo');
+			$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+
+			$this->load->view('templates/header', $data);
+			$this->load->view('templates/sidebar', $data);
+			$this->load->view('form_wo', $data);
 			$this->load->view('templates/footer');
 		}
 	}
@@ -176,8 +187,10 @@ class Form_WO extends CI_Controller {
         $getID = array('id' => $id );
         $data['report'] =  $this->M_WO->edit_data($getID, 'wo_form')->result();
         
-        $this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
+        $data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/sidebar', $data);
 		$this->load->view('edit_form_wo', $data);
 		$this->load->view('templates/footer');
 	}
