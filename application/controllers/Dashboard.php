@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
-		is_logged_in();
+		// is_logged_in();
 	}
 
 	public function index()
@@ -340,8 +340,10 @@ class Dashboard extends CI_Controller {
 		$sumdecember_ppm_c = $datadecember_ppm_c;
 		$data['hdecember_ppm_c'] = round($sumdecember_ppm_c);
 
-		$this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
 		$this->load->view('dashboard', $data);
 		$this->load->view('templates/footer');
 	}

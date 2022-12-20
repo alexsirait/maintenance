@@ -58,10 +58,10 @@
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle mb-1" width="19" alt="User Image">
-          <span class="ml-2"><?php echo $_SESSION['user']['name'] ?></span>
+          <span class="ml-2"><?= $user['employee_name'] ?></span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header"><?php echo $_SESSION['user']['name'] ?></span>
+          <span class="dropdown-item dropdown-header"><?= $user['employee_name'] ?></span>
           <div class="dropdown-divider"></div>
           <a href="<?= base_url('profile'); ?>" class="dropdown-item">
             <i class="fa fa-user mr-3" aria-hidden="true"></i> Profile
