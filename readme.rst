@@ -4,8 +4,8 @@ Cladtek | Maintenance System
 
 Developed with ❤️ by
 
-Alex Sirait,
+1. Alex Sirait
 
-Aji Utomo,
+2. Aji Utomo
 
-Sari Anastasya,
+3. Sari Anastasya
