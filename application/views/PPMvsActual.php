@@ -22,6 +22,67 @@
             <h6 class="m-0 font-weight-bold text-primary">Actual PPM</h6>
           </div>                    
           <div class="card-body col-sm-12">
+            <div class="row">
+              <div class="col-sm-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3><?php foreach ($bobi as $b) { ?><p><?= $b['total'] ?></p><?php } ?></h3>
+                    <p>Preventive Done</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                  </div>
+                  <a href="<?php echo base_url(); ?>Dashboard/checkreport_preventive" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <div class="col-sm-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3><?php foreach ($bobi2 as $b) { ?><p><?= $b['total'] ?></p><?php } ?></h3>
+                    <p>Preventive & Calibration</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                  </div>
+                  <a href="<?php echo base_url(); ?>Dashboard/checkreport_preventive" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <div class="col-sm-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3><?php foreach ($bobi4 as $b) { ?><p><?= $b['total'] ?></p><?php } ?></h3>
+                    <p>Preventive</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                  </div>
+                  <a href="<?php echo base_url(); ?>Dashboard/checkreport_preventive" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <div class="col-sm-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3><?php foreach ($bobi3 as $b) { ?><p><?= $b['total'] ?></p><?php } ?></h3>
+                    <p>Under Repair</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                  </div>
+                  <a href="<?php echo base_url(); ?>Dashboard/checkreport_preventive" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Actual PPM</h6>
+          </div>                    
+          <div class="card-body col-sm-12">
           <?= $this->session->flashdata('flash');  ?>
               <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
@@ -46,7 +107,7 @@
                   </table>
               </div>
           </div>
-        </div>
+        </div> -->
       <!-- akhir disini -->
       </div>
     </section>
