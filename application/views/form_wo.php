@@ -222,7 +222,10 @@
                                 </tbody>
                             </table>
                         </div>
-                        <button type="submit" class='mt-4 btn btn-primary float-right'>Submit <i class="fas fa-arrow-right ml-2"></i></button>
+                        <div class="mt-4 justify-content-between d-flex">
+                            <div><a class="btn btn-success" href="https://api.whatsapp.com/send?phone=<?= $user['gm_phone'];?>&text=Hi,%20This%20is%20a%20message%20from%20the%20Maintenance%20System."><i class="fab fa-whatsapp"> Send WA</i></a></div>
+                            <div><button type="submit" class='btn btn-primary'>Submit <i class="fas fa-arrow-right ml-2"></i></button></div>
+                        </div>
                     </form>
                 </div>
                 <div class="card-footer">Note : Test the Machine after repaired</div>
