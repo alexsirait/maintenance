@@ -351,7 +351,7 @@
       type: "spline",
       visible: true,
       showInLegend: true,
-      yValueFormatString: "##",
+      yValueFormatString: "##0",
       name: "Actual",
       dataPoints: [
         { label: "January", y: <?= $hjanuary ?> },
@@ -372,7 +372,7 @@
       type: "spline", 
       showInLegend: true,
       visible: true,
-      yValueFormatString: "##",
+      yValueFormatString: "##0",
       name: "Preventive",
       dataPoints: [
         { label: "January", y: <?= $hjanuary_ppm ?> },
@@ -393,7 +393,7 @@
       type: "spline",
       visible: true,
       showInLegend: true,
-      yValueFormatString: "##",
+      yValueFormatString: "##0",
       name: "Preventive Calibration",
       dataPoints: [
         { label: "January", y: <?= $hjanuary_ppm_c ?> },
