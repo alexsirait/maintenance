@@ -80,7 +80,7 @@ class DashboardModel extends Ci_Model
 
 	public function edit_preventive_february($id)
 	{
-		return $this->db->get_where('preventive_maintenance_form', ['id' => $id])->row_array();
+		return $this->db->get_where('preventive_maintenance_form_february', ['id' => $id])->row_array();
 	}
 
 	public function editequipment()
