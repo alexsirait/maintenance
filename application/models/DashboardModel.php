@@ -13,6 +13,11 @@ class DashboardModel extends Ci_Model
 		return $this->db->insert('preventive_maintenance_form', $item);
 	}
 
+	public function addpreventivefebruary($item)
+	{
+		return $this->db->insert('preventive_maintenance_form_february', $item);
+	}
+
     public function getEquipmentForm()
     {
         return $this->db->get('equipment_form')->result_array();
@@ -21,6 +26,11 @@ class DashboardModel extends Ci_Model
     public function getpreventiveForm()
     {
         return $this->db->get('preventive_maintenance_form')->result_array();
+    }
+
+    public function getpreventiveForm_february()
+    {
+        return $this->db->get('preventive_maintenance_form_february')->result_array();
     }
 
     public function hapus($id)
@@ -33,6 +43,11 @@ class DashboardModel extends Ci_Model
 	{
         $this->db->where('id', $id);
 	  	$this->db->delete("preventive_maintenance_form");	  	
+	}
+    public function hapuspreventivefebruary($id)
+	{
+        $this->db->where('id', $id);
+	  	$this->db->delete("preventive_maintenance_form_february");	  	
 	}
 
     public function buatangka()
@@ -63,6 +78,11 @@ class DashboardModel extends Ci_Model
 		return $this->db->get_where('preventive_maintenance_form', ['id' => $id])->row_array();
 	}
 
+	public function edit_preventive_february($id)
+	{
+		return $this->db->get_where('preventive_maintenance_form', ['id' => $id])->row_array();
+	}
+
 	public function editequipment()
 	{
 		$equipment_form = [
@@ -89,78 +109,85 @@ class DashboardModel extends Ci_Model
 		$preventive_maintenance_form = [
 			"machine" => $this->input->post('machine', true),
 			"description" => $this->input->post('description', true),
-			"section" => $this->input->post('section', true),
-			"ww01" => $this->input->post('ww01', true),
-			"ww02" => $this->input->post('ww02', true),
-			"ww03" => $this->input->post('ww03', true),
-			"ww04" => $this->input->post('ww04', true),
-			"ww05" => $this->input->post('ww05', true),
-			"ww06" => $this->input->post('ww06', true),
-			"ww07" => $this->input->post('ww07', true),
-			"ww08" => $this->input->post('ww08', true),
-			"ww09" => $this->input->post('ww09', true),
-			"ww10" => $this->input->post('ww10', true),
-			"ww10_1" => $this->input->post('ww10_1', true),
-			"ww11" => $this->input->post('ww11', true),
-			"ww12" => $this->input->post('ww12', true),
-			"ww13" => $this->input->post('ww13', true),
-			"ww14" => $this->input->post('ww14', true),
-			"ww14_1" => $this->input->post('ww14_1', true),
-			"ww15" => $this->input->post('ww15', true),
-			"ww16" => $this->input->post('ww16', true),
-			"ww17" => $this->input->post('ww17', true),
-			"ww18" => $this->input->post('ww18', true),
-			"ww18_1" => $this->input->post('ww18_1', true),
-			"ww19" => $this->input->post('ww19', true),
-			"ww20" => $this->input->post('ww20', true),
-			"ww21" => $this->input->post('ww21', true),
-			"ww22" => $this->input->post('ww22', true),
-			"ww23" => $this->input->post('ww23', true),
-			"ww23_1" => $this->input->post('ww23_1', true),
-			"ww24" => $this->input->post('ww24', true),
-			"ww25" => $this->input->post('ww25', true),
-			"ww26" => $this->input->post('ww26', true),
-			"ww27" => $this->input->post('ww27', true),
-			"ww27_1" => $this->input->post('ww27_1', true),
-			"ww28" => $this->input->post('ww28', true),
-			"ww29" => $this->input->post('ww29', true),
-			"ww30" => $this->input->post('ww30', true),
-			"ww31" => $this->input->post('ww31', true),
-			"ww32" => $this->input->post('ww32', true),
-			"ww33" => $this->input->post('ww33', true),
-			"ww34" => $this->input->post('ww34', true),
-			"ww35" => $this->input->post('ww35', true),
-			"ww36" => $this->input->post('ww36', true),
-			"ww37" => $this->input->post('ww37', true),
-			"ww38" => $this->input->post('ww38', true),
-			"ww39" => $this->input->post('ww39', true),
-			"ww40" => $this->input->post('ww40', true),
-			"ww40_1" => $this->input->post('ww40_1', true),
-			"ww41" => $this->input->post('ww41', true),
-			"ww42" => $this->input->post('ww42', true),
-			"ww43" => $this->input->post('ww43', true),
-			"ww44" => $this->input->post('ww44', true),
-			"ww45" => $this->input->post('ww45', true),
-			"ww45_1" => $this->input->post('ww45_1', true),
-			"ww46" => $this->input->post('ww46', true),
-			"ww47" => $this->input->post('ww47', true),
-			"ww48" => $this->input->post('ww48', true),
-			"ww49" => $this->input->post('ww49', true),
-			"ww49_1" => $this->input->post('ww49_1', true),
-			"ww50" => $this->input->post('ww50', true),
-			"ww51" => $this->input->post('ww51', true),
-			"ww52" => $this->input->post('ww52', true),
-			"ww53" => $this->input->post('ww53', true),
+			"ww01_1" => $this->input->post('ww01_1', true),			
+			"ww01_2" => $this->input->post('ww01_2', true),			
+			"ww01_3" => $this->input->post('ww01_3', true),			
+			"ww01_4" => $this->input->post('ww01_4', true),			
+			"ww01_5" => $this->input->post('ww01_5', true),			
+			"ww01_6" => $this->input->post('ww01_6', true),			
+			"ww01_7" => $this->input->post('ww01_7', true),			
+			"ww02_8" => $this->input->post('ww02_8', true),			
+			"ww02_9" => $this->input->post('ww02_9', true),			
+			"ww02_10" => $this->input->post('ww02_10', true),			
+			"ww02_11" => $this->input->post('ww02_11', true),			
+			"ww02_12" => $this->input->post('ww02_12', true),			
+			"ww02_13" => $this->input->post('ww02_13', true),			
+			"ww02_14" => $this->input->post('ww02_14', true),			
+			"ww03_15" => $this->input->post('ww03_15', true),			
+			"ww03_16" => $this->input->post('ww03_16', true),			
+			"ww03_17" => $this->input->post('ww03_17', true),			
+			"ww03_18" => $this->input->post('ww03_18', true),			
+			"ww03_19" => $this->input->post('ww03_19', true),			
+			"ww03_20" => $this->input->post('ww03_20', true),			
+			"ww03_21" => $this->input->post('ww03_21', true),			
+			"ww04_22" => $this->input->post('ww04_22', true),			
+			"ww04_23" => $this->input->post('ww04_23', true),			
+			"ww04_24" => $this->input->post('ww04_24', true),			
+			"ww04_25" => $this->input->post('ww04_25', true),			
+			"ww04_26" => $this->input->post('ww04_26', true),			
+			"ww04_27" => $this->input->post('ww04_27', true),			
+			"ww04_28" => $this->input->post('ww04_28', true),			
+			"ww05_29" => $this->input->post('ww05_29', true),			
+			"ww05_30" => $this->input->post('ww05_30', true),			
+			"ww05_31" => $this->input->post('ww05_31', true),			
 		];
 			$this->db->where('id', $this->input->post('id'));
        		$this->db->update('preventive_maintenance_form', $preventive_maintenance_form);
+	}
+
+	public function editpreventivefebruary()
+	{
+		$preventive_maintenance_form_february = [
+			"machine" => $this->input->post('machine', true),
+			"description" => $this->input->post('description', true),
+			"ww01_1" => $this->input->post('ww01_1', true),			
+			"ww01_2" => $this->input->post('ww01_2', true),			
+			"ww01_3" => $this->input->post('ww01_3', true),			
+			"ww01_4" => $this->input->post('ww01_4', true),			
+			"ww02_5" => $this->input->post('ww02_5', true),			
+			"ww02_6" => $this->input->post('ww02_6', true),			
+			"ww02_7" => $this->input->post('ww02_7', true),			
+			"ww02_8" => $this->input->post('ww02_8', true),			
+			"ww02_9" => $this->input->post('ww02_9', true),			
+			"ww02_10" => $this->input->post('ww02_10', true),			
+			"ww02_11" => $this->input->post('ww02_11', true),			
+			"ww03_12" => $this->input->post('ww03_12', true),			
+			"ww03_13" => $this->input->post('ww03_13', true),			
+			"ww03_14" => $this->input->post('ww03_14', true),			
+			"ww03_15" => $this->input->post('ww03_15', true),			
+			"ww03_16" => $this->input->post('ww03_16', true),			
+			"ww03_17" => $this->input->post('ww03_17', true),			
+			"ww03_18" => $this->input->post('ww03_18', true),			
+			"ww03_19" => $this->input->post('ww03_19', true),			
+			"ww04_20" => $this->input->post('ww04_20', true),			
+			"ww04_21" => $this->input->post('ww04_21', true),			
+			"ww04_22" => $this->input->post('ww04_22', true),			
+			"ww04_23" => $this->input->post('ww04_23', true),			
+			"ww04_24" => $this->input->post('ww04_24', true),			
+			"ww04_25" => $this->input->post('ww04_25', true),			
+			"ww05_26" => $this->input->post('ww05_26', true),			
+			"ww05_27" => $this->input->post('ww05_27', true),			
+			"ww05_28" => $this->input->post('ww05_28', true),			
+		];
+			$this->db->where('id', $this->input->post('id'));
+       		$this->db->update('preventive_maintenance_form_february', $preventive_maintenance_form_february);
 	}
 
 	// PPM vs Actual
 	public function hitungJumlahPretentive()
 	{		
 		$this->db->select('count(ww02)')->where('ww02','D');
-		$query = $this->db->get('preventive_maintenance_form');
+		$query = $this->db->get('preventive_maintenance_form_lama');
 		$TotalD = $query->row_array();
 		return $TotalD['count(ww02)'];	
 	}
