@@ -606,7 +606,7 @@ class Dashboard extends CI_Controller {
 		$ww03_16 = $this->input->post('ww03_16');
 		$ww03_17 = $this->input->post('ww03_17');
 		$ww03_18 = $this->input->post('ww03_18');
-		$ww03_19 = $this->input->post('ww03_19');
+		$ww04_19 = $this->input->post('ww04_19');
 		$ww03_20 = $this->input->post('ww03_20');
 		$ww03_21 = $this->input->post('ww03_21');
 		$ww04_22 = $this->input->post('ww04_22');
@@ -639,7 +639,7 @@ class Dashboard extends CI_Controller {
 			"ww03_16" => $ww03_16,  
 			"ww03_17" => $ww03_17,  
 			"ww03_18" => $ww03_18,  
-			"ww03_19" => $ww03_19,  
+			"ww04_19" => $ww04_19,  
 			"ww04_20" => $ww03_20,  
 			"ww04_21" => $ww03_21,  
 			"ww04_22" => $ww04_22,  

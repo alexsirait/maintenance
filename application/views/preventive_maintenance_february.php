@@ -161,7 +161,7 @@
                           <td align=center style="white-space:nowrap;"><?= $item['ww03_16'] ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['ww03_17'] ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['ww03_18'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_19'] ?></td>
+                          <td align=center style="white-space:nowrap;"><?= $item['ww04_19'] ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['ww04_20'] ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['ww04_21'] ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['ww04_22'] ?></td>

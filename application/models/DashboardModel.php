@@ -168,7 +168,7 @@ class DashboardModel extends Ci_Model
 			"ww03_16" => $this->input->post('ww03_16', true),			
 			"ww03_17" => $this->input->post('ww03_17', true),			
 			"ww03_18" => $this->input->post('ww03_18', true),			
-			"ww03_19" => $this->input->post('ww03_19', true),			
+			"ww04_19" => $this->input->post('ww04_19', true),			
 			"ww04_20" => $this->input->post('ww04_20', true),			
 			"ww04_21" => $this->input->post('ww04_21', true),			
 			"ww04_22" => $this->input->post('ww04_22', true),			
