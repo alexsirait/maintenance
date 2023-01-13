@@ -19,13 +19,13 @@
       <!-- mulai disini -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Planned Preventive Maintenance February</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Planned Preventive Maintenance April</h6>
           </div>          
           <div class="card-body col-sm-12">
             <?= $this->session->flashdata('flash'); ?>            
             <div class="dropdown">
               <div class="mb-2 mr-2" style="float: left;">	
-                <a class="btn btn-primary float-right" href="<?php echo base_url(); ?>dashboard/add_maintenance_february" style="color:black"><i class="fas fa-plus"></i> <b>Add Data</b></a>
+                <a class="btn btn-primary float-right" href="<?php echo base_url(); ?>dashboard/add_maintenance_april" style="color:black"><i class="fas fa-plus"></i> <b>Add Data</b></a>
               </div>
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Monthly Filter 
@@ -51,33 +51,31 @@
                         <tr>
                           <th style="white-space:nowrap;" class="text-center" colspan="3"><b>Month</b></th>
                           <!-- <th style="white-space:nowrap;" class="text-center" colspan="32"><b>january</th> -->
-                          <th style="white-space:nowrap;" class="text-center" colspan="29"><b>February</th>
-                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>March</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>April</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="31"><b>May</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>June</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="31"><b>July</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>August</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="31"><b>September</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>October</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="31"><b>November</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>December</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="29"><b>February</th> -->
+                          <th style="white-space:nowrap;" class="text-center" colspan="32"><b>March</th>
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>April</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>May</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>June</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>July</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>August</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>September</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>October</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>November</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>December</th> -->
                         </tr>
                         <tr>
                           <td align=center style="white-space:nowrap;" rowspan="3">No</td>
                           <td align=center style="white-space:nowrap;" rowspan="3">Machine</td>
                           <td align=center style="white-space:nowrap;" rowspan="3">Description Machine</td>
-                          <td align=center style="white-space:nowrap;" colspan="4">WW-01</td>
+                          <td align=center style="white-space:nowrap;" colspan="1">WW-01</td>
                           <td align=center style="white-space:nowrap;" colspan="7">WW-02</td>
                           <td align=center style="white-space:nowrap;" colspan="7">WW-03</td>
                           <td align=center style="white-space:nowrap;" colspan="7">WW-04</td>
-                          <td align=center style="white-space:nowrap;" colspan="3">WW-05</td>                          
+                          <td align=center style="white-space:nowrap;" colspan="7">WW-05</td>                          
+                          <td align=center style="white-space:nowrap;" colspan="1">WW-06</td>                          
                           <td align=center style="white-space:nowrap;" rowspan="3">Action</td>                       
                         </tr>
-                        <tr>
-                          <td align=center style="white-space:nowrap;">Wed</td>
-                          <td align=center style="white-space:nowrap;">Thu</td>
-                          <td align=center style="white-space:nowrap;">Fri</td>
+                        <tr>                                                    
                           <td align=center style="white-space:nowrap;">Sat</td>
                           <td align=center style="white-space:nowrap;">Sun</td>
                           <td align=center style="white-space:nowrap;">Mon</td>
@@ -103,6 +101,11 @@
                           <td align=center style="white-space:nowrap;">Sun</td>
                           <td align=center style="white-space:nowrap;">Mon</td>
                           <td align=center style="white-space:nowrap;">Tue</td>
+                          <td align=center style="white-space:nowrap;">Wed</td>
+                          <td align=center style="white-space:nowrap;">Thu</td>
+                          <td align=center style="white-space:nowrap;">Fri</td>
+                          <td align=center style="white-space:nowrap;">Sat</td>
+                          <td align=center style="white-space:nowrap;">Sun</td>
                         </tr>
                         <tr>
                           <td align=center style="white-space:nowrap;">1</td>
@@ -133,76 +136,51 @@
                           <td align=center style="white-space:nowrap;">26</td>
                           <td align=center style="white-space:nowrap;">27</td>
                           <td align=center style="white-space:nowrap;">28</td>
+                          <td align=center style="white-space:nowrap;">29</td>
+                          <td align=center style="white-space:nowrap;">30</td>
                         </tr>
                       </thead>
                       <tbody>
-                      <?php if ($preventive_maintenance_form_february != null) : ?>
+                      <?php if ($preventive_maintenance_form_april != null) : ?>
                       <?php $i = 1;
-                        foreach ($preventive_maintenance_form_february as $item) { ?>
+                        foreach ($preventive_maintenance_form_april as $item) { ?>
                         <tr>
                           <td scope="row" align=center style="white-space:nowrap;" style="white-space:nowrap;"><?= $i++; ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['machine'] ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['description'] ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww01_1'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww01_1'] . '</div>'; }elseif ($item['ww01_1'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww01_1']; } elseif ($item['ww01_1'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww01_1']; } elseif ($item['ww01_1'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww01_1']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww01_2'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww01_2'] . '</div>'; }elseif ($item['ww01_2'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww01_2']; } elseif ($item['ww01_2'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww01_2']; } elseif ($item['ww01_2'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww01_2']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww01_3'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww01_3'] . '</div>'; }elseif ($item['ww01_3'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww01_3']; } elseif ($item['ww01_3'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww01_3']; } elseif ($item['ww01_3'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww01_3']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww01_4'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww01_4'] . '</div>'; }elseif ($item['ww01_4'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww01_4']; } elseif ($item['ww01_4'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww01_4']; } elseif ($item['ww01_4'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww01_4']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww02_2'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_2'] . '</div>'; }elseif ($item['ww02_2'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_2']; } elseif ($item['ww02_2'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_2']; } elseif ($item['ww02_2'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_2']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww02_3'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_3'] . '</div>'; }elseif ($item['ww02_3'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_3']; } elseif ($item['ww02_3'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_3']; } elseif ($item['ww02_3'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_3']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww02_4'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_4'] . '</div>'; }elseif ($item['ww02_4'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_4']; } elseif ($item['ww02_4'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_4']; } elseif ($item['ww02_4'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_4']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww02_5'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_5'] . '</div>'; }elseif ($item['ww02_5'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_5']; } elseif ($item['ww02_5'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_5']; } elseif ($item['ww02_5'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_5']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww02_6'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_6'] . '</div>'; }elseif ($item['ww02_6'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_6']; } elseif ($item['ww02_6'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_6']; } elseif ($item['ww02_6'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_6']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww02_7'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_7'] . '</div>'; }elseif ($item['ww02_7'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_7']; } elseif ($item['ww02_7'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_7']; } elseif ($item['ww02_7'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_7']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww02_8'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_8'] . '</div>'; }elseif ($item['ww02_8'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_8']; } elseif ($item['ww02_8'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_8']; } elseif ($item['ww02_8'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_8']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww02_9'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_9'] . '</div>'; }elseif ($item['ww02_9'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_9']; } elseif ($item['ww02_9'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_9']; } elseif ($item['ww02_9'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_9']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww02_10'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_10'] . '</div>'; }elseif ($item['ww02_10'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_10']; } elseif ($item['ww02_10'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_10']; } elseif ($item['ww02_10'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_10']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww02_11'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww02_11'] . '</div>'; }elseif ($item['ww02_11'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_11']; } elseif ($item['ww02_11'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww02_11']; } elseif ($item['ww02_11'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww02_11']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww03_9'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_9'] . '</div>'; }elseif ($item['ww03_9'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_9']; } elseif ($item['ww03_9'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_9']; } elseif ($item['ww03_9'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_9']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww03_10'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_10'] . '</div>'; }elseif ($item['ww03_10'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_10']; } elseif ($item['ww03_10'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_10']; } elseif ($item['ww03_10'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_10']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww03_11'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_11'] . '</div>'; }elseif ($item['ww03_11'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_11']; } elseif ($item['ww03_11'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_11']; } elseif ($item['ww03_11'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_11']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww03_12'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_12'] . '</div>'; }elseif ($item['ww03_12'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_12']; } elseif ($item['ww03_12'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_12']; } elseif ($item['ww03_12'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_12']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww03_13'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_13'] . '</div>'; }elseif ($item['ww03_13'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_13']; } elseif ($item['ww03_13'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_13']; } elseif ($item['ww03_13'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_13']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww03_14'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_14'] . '</div>'; }elseif ($item['ww03_14'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_14']; } elseif ($item['ww03_14'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_14']; } elseif ($item['ww03_14'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_14']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww03_15'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_15'] . '</div>'; }elseif ($item['ww03_15'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_15']; } elseif ($item['ww03_15'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_15']; } elseif ($item['ww03_15'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_15']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww03_16'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_16'] . '</div>'; }elseif ($item['ww03_16'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_16']; } elseif ($item['ww03_16'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_16']; } elseif ($item['ww03_16'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_16']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww03_17'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_17'] . '</div>'; }elseif ($item['ww03_17'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_17']; } elseif ($item['ww03_17'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_17']; } elseif ($item['ww03_17'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_17']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww03_18'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww03_18'] . '</div>'; }elseif ($item['ww03_18'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_18']; } elseif ($item['ww03_18'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww03_18']; } elseif ($item['ww03_18'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww03_18']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww04_16'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_16'] . '</div>'; }elseif ($item['ww04_16'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_16']; } elseif ($item['ww04_16'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_16']; } elseif ($item['ww04_16'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_16']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww04_17'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_17'] . '</div>'; }elseif ($item['ww04_17'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_17']; } elseif ($item['ww04_17'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_17']; } elseif ($item['ww04_17'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_17']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww04_18'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_18'] . '</div>'; }elseif ($item['ww04_18'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_18']; } elseif ($item['ww04_18'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_18']; } elseif ($item['ww04_18'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_18']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww04_19'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_19'] . '</div>'; }elseif ($item['ww04_19'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_19']; } elseif ($item['ww04_19'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_19']; } elseif ($item['ww04_19'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_19']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww04_20'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_20'] . '</div>'; }elseif ($item['ww04_20'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_20']; } elseif ($item['ww04_20'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_20']; } elseif ($item['ww04_20'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_20']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww04_21'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_21'] . '</div>'; }elseif ($item['ww04_21'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_21']; } elseif ($item['ww04_21'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_21']; } elseif ($item['ww04_21'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_21']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww04_22'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_22'] . '</div>'; }elseif ($item['ww04_22'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_22']; } elseif ($item['ww04_22'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_22']; } elseif ($item['ww04_22'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_22']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww04_23'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_23'] . '</div>'; }elseif ($item['ww04_23'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_23']; } elseif ($item['ww04_23'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_23']; } elseif ($item['ww04_23'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_23']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww04_24'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_24'] . '</div>'; }elseif ($item['ww04_24'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_24']; } elseif ($item['ww04_24'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_24']; } elseif ($item['ww04_24'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_24']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww04_25'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_25'] . '</div>'; }elseif ($item['ww04_25'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_25']; } elseif ($item['ww04_25'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_25']; } elseif ($item['ww04_25'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_25']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_23'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_23'] . '</div>'; }elseif ($item['ww05_23'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_23']; } elseif ($item['ww05_23'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_23']; } elseif ($item['ww05_23'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_23']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_24'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_24'] . '</div>'; }elseif ($item['ww05_24'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_24']; } elseif ($item['ww05_24'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_24']; } elseif ($item['ww05_24'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_24']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_25'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_25'] . '</div>'; }elseif ($item['ww05_25'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_25']; } elseif ($item['ww05_25'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_25']; } elseif ($item['ww05_25'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_25']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww05_26'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_26'] . '</div>'; }elseif ($item['ww05_26'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_26']; } elseif ($item['ww05_26'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_26']; } elseif ($item['ww05_26'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_26']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww05_27'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_27'] . '</div>'; }elseif ($item['ww05_27'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_27']; } elseif ($item['ww05_27'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_27']; } elseif ($item['ww05_27'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_27']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_28'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_28'] . '</div>'; }elseif ($item['ww05_28'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_28']; } elseif ($item['ww05_28'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_28']; } elseif ($item['ww05_28'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_28']; } ?></td>                          
-
-                          <!-- <td align=center style="white-space:nowrap;"><?= $item['ww01_1'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww01_2'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww01_3'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww01_4'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_5'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_6'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_7'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_8'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_9'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_10'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_11'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_12'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_13'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_14'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_15'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_16'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_17'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_18'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_19'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_20'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_21'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_22'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_23'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_24'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_25'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww05_26'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww05_27'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww05_28'] ?></td> -->
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_28'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_28'] . '</div>'; }elseif ($item['ww05_28'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_28']; } elseif ($item['ww05_28'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_28']; } elseif ($item['ww05_28'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_28']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_29'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_29'] . '</div>'; }elseif ($item['ww05_29'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_29']; } elseif ($item['ww05_29'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_29']; } elseif ($item['ww05_29'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_29']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww06_30'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww06_30'] . '</div>'; }elseif ($item['ww06_30'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww06_30']; } elseif ($item['ww06_30'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww06_30']; } elseif ($item['ww06_30'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww06_30']; } ?></td>
                           <td align=center style="white-space:nowrap;">
-                            <a class="btn btn-info btn-sm m-1" href="<?= base_url(); ?>Dashboard/ubah_preventive_february/<?= $item['id']?>" style="color: black"><i class="fas fa-solid fa-pencil-alt"></i></a>
-                            <a href="<?= base_url() ?>Dashboard/deleteReportPreventiveFebruary/<?= $item['id']?>" onclick="return confirm('Hapus?');" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-info btn-sm m-1" href="<?= base_url(); ?>Dashboard/ubah_preventive_april/<?= $item['id']?>" style="color: black"><i class="fas fa-solid fa-pencil-alt"></i></a>
+                            <a href="<?= base_url() ?>Dashboard/deleteReportPreventiveApril/<?= $item['id']?>" onclick="return confirm('Hapus?');" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                           </td>                          
                         </tr>
                         <?php } ?>

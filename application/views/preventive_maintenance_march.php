@@ -19,13 +19,13 @@
       <!-- mulai disini -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Planned Preventive Maintenance February</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Planned Preventive Maintenance March</h6>
           </div>          
           <div class="card-body col-sm-12">
             <?= $this->session->flashdata('flash'); ?>            
             <div class="dropdown">
               <div class="mb-2 mr-2" style="float: left;">	
-                <a class="btn btn-primary float-right" href="<?php echo base_url(); ?>dashboard/add_maintenance_february" style="color:black"><i class="fas fa-plus"></i> <b>Add Data</b></a>
+                <a class="btn btn-primary float-right" href="<?php echo base_url(); ?>dashboard/add_maintenance_march" style="color:black"><i class="fas fa-plus"></i> <b>Add Data</b></a>
               </div>
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Monthly Filter 
@@ -51,17 +51,17 @@
                         <tr>
                           <th style="white-space:nowrap;" class="text-center" colspan="3"><b>Month</b></th>
                           <!-- <th style="white-space:nowrap;" class="text-center" colspan="32"><b>january</th> -->
-                          <th style="white-space:nowrap;" class="text-center" colspan="29"><b>February</th>
-                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>March</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>April</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="31"><b>May</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>June</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="31"><b>July</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>August</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="31"><b>September</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>October</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="31"><b>November</th>
-                          <th style="white-space:nowrap;" class="text-center" colspan="30"><b>December</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="29"><b>February</th> -->
+                          <th style="white-space:nowrap;" class="text-center" colspan="32"><b>March</th>
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>April</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>May</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>June</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>July</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>August</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>September</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>October</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="31"><b>November</th> -->
+                          <!-- <th style="white-space:nowrap;" class="text-center" colspan="30"><b>December</th> -->
                         </tr>
                         <tr>
                           <td align=center style="white-space:nowrap;" rowspan="3">No</td>
@@ -71,10 +71,10 @@
                           <td align=center style="white-space:nowrap;" colspan="7">WW-02</td>
                           <td align=center style="white-space:nowrap;" colspan="7">WW-03</td>
                           <td align=center style="white-space:nowrap;" colspan="7">WW-04</td>
-                          <td align=center style="white-space:nowrap;" colspan="3">WW-05</td>                          
+                          <td align=center style="white-space:nowrap;" colspan="6">WW-05</td>                          
                           <td align=center style="white-space:nowrap;" rowspan="3">Action</td>                       
                         </tr>
-                        <tr>
+                        <tr>                          
                           <td align=center style="white-space:nowrap;">Wed</td>
                           <td align=center style="white-space:nowrap;">Thu</td>
                           <td align=center style="white-space:nowrap;">Fri</td>
@@ -103,6 +103,9 @@
                           <td align=center style="white-space:nowrap;">Sun</td>
                           <td align=center style="white-space:nowrap;">Mon</td>
                           <td align=center style="white-space:nowrap;">Tue</td>
+                          <td align=center style="white-space:nowrap;">Wed</td>
+                          <td align=center style="white-space:nowrap;">Thu</td>
+                          <td align=center style="white-space:nowrap;">Fri</td>
                         </tr>
                         <tr>
                           <td align=center style="white-space:nowrap;">1</td>
@@ -133,12 +136,15 @@
                           <td align=center style="white-space:nowrap;">26</td>
                           <td align=center style="white-space:nowrap;">27</td>
                           <td align=center style="white-space:nowrap;">28</td>
+                          <td align=center style="white-space:nowrap;">29</td>
+                          <td align=center style="white-space:nowrap;">30</td>
+                          <td align=center style="white-space:nowrap;">31</td>
                         </tr>
                       </thead>
                       <tbody>
-                      <?php if ($preventive_maintenance_form_february != null) : ?>
+                      <?php if ($preventive_maintenance_form_march != null) : ?>
                       <?php $i = 1;
-                        foreach ($preventive_maintenance_form_february as $item) { ?>
+                        foreach ($preventive_maintenance_form_march as $item) { ?>
                         <tr>
                           <td scope="row" align=center style="white-space:nowrap;" style="white-space:nowrap;"><?= $i++; ?></td>
                           <td align=center style="white-space:nowrap;"><?= $item['machine'] ?></td>
@@ -170,39 +176,13 @@
                           <td align=center style="white-space:nowrap;"><?php if($item['ww04_25'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww04_25'] . '</div>'; }elseif ($item['ww04_25'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_25']; } elseif ($item['ww04_25'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww04_25']; } elseif ($item['ww04_25'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww04_25']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww05_26'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_26'] . '</div>'; }elseif ($item['ww05_26'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_26']; } elseif ($item['ww05_26'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_26']; } elseif ($item['ww05_26'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_26']; } ?></td>
                           <td align=center style="white-space:nowrap;"><?php if($item['ww05_27'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_27'] . '</div>'; }elseif ($item['ww05_27'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_27']; } elseif ($item['ww05_27'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_27']; } elseif ($item['ww05_27'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_27']; } ?></td>
-                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_28'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_28'] . '</div>'; }elseif ($item['ww05_28'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_28']; } elseif ($item['ww05_28'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_28']; } elseif ($item['ww05_28'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_28']; } ?></td>                          
-
-                          <!-- <td align=center style="white-space:nowrap;"><?= $item['ww01_1'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww01_2'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww01_3'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww01_4'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_5'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_6'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_7'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_8'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_9'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_10'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww02_11'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_12'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_13'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_14'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_15'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_16'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_17'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww03_18'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_19'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_20'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_21'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_22'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_23'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_24'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww04_25'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww05_26'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww05_27'] ?></td>
-                          <td align=center style="white-space:nowrap;"><?= $item['ww05_28'] ?></td> -->
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_28'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_28'] . '</div>'; }elseif ($item['ww05_28'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_28']; } elseif ($item['ww05_28'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_28']; } elseif ($item['ww05_28'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_28']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_29'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_29'] . '</div>'; }elseif ($item['ww05_29'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_29']; } elseif ($item['ww05_29'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_29']; } elseif ($item['ww05_29'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_29']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_30'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_30'] . '</div>'; }elseif ($item['ww05_30'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_30']; } elseif ($item['ww05_30'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_30']; } elseif ($item['ww05_30'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_30']; } ?></td>
+                          <td align=center style="white-space:nowrap;"><?php if($item['ww05_31'] == 'D'){ echo '<div class="badge bg-success text-white p-2">' . $item['ww05_31'] . '</div>'; }elseif ($item['ww05_31'] == 'P/C') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_31']; } elseif ($item['ww05_31'] == 'P') { echo '<div class="badge bg-warning text-white p-2">' . $item['ww05_31']; } elseif ($item['ww05_31'] == 'U/R') { echo '<div class="badge bg-danger text-white p-2">' . $item['ww05_31']; } ?></td>
                           <td align=center style="white-space:nowrap;">
-                            <a class="btn btn-info btn-sm m-1" href="<?= base_url(); ?>Dashboard/ubah_preventive_february/<?= $item['id']?>" style="color: black"><i class="fas fa-solid fa-pencil-alt"></i></a>
-                            <a href="<?= base_url() ?>Dashboard/deleteReportPreventiveFebruary/<?= $item['id']?>" onclick="return confirm('Hapus?');" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-info btn-sm m-1" href="<?= base_url(); ?>Dashboard/ubah_preventive_march/<?= $item['id']?>" style="color: black"><i class="fas fa-solid fa-pencil-alt"></i></a>
+                            <a href="<?= base_url() ?>Dashboard/deleteReportPreventiveMarch/<?= $item['id']?>" onclick="return confirm('Hapus?');" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                           </td>                          
                         </tr>
                         <?php } ?>
