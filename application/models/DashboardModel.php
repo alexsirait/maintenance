@@ -25,6 +25,10 @@ class DashboardModel extends Ci_Model
 	{
 		return $this->db->insert('preventive_maintenance_form_april', $item);
 	}
+	public function addpreventivemay($item)
+	{
+		return $this->db->insert('preventive_maintenance_form_may', $item);
+	}
 
     public function getEquipmentForm()
     {
@@ -48,6 +52,10 @@ class DashboardModel extends Ci_Model
     public function getpreventiveForm_april()
     {
         return $this->db->get('preventive_maintenance_form_april')->result_array();
+    }
+    public function getpreventiveForm_may()
+    {
+        return $this->db->get('preventive_maintenance_form_may')->result_array();
     }
 
     public function hapus($id)
@@ -75,6 +83,11 @@ class DashboardModel extends Ci_Model
 	{
         $this->db->where('id', $id);
 	  	$this->db->delete("preventive_maintenance_form_april");	  	
+	}
+    public function hapuspreventivemay($id)
+	{
+        $this->db->where('id', $id);
+	  	$this->db->delete("preventive_maintenance_form_may");	  	
 	}
 
     public function buatangka()
@@ -116,6 +129,10 @@ class DashboardModel extends Ci_Model
 	public function edit_preventive_april($id)
 	{
 		return $this->db->get_where('preventive_maintenance_form_april', ['id' => $id])->row_array();
+	}
+	public function edit_preventive_may($id)
+	{
+		return $this->db->get_where('preventive_maintenance_form_may', ['id' => $id])->row_array();
 	}
 
 	public function editequipment()
@@ -295,6 +312,46 @@ class DashboardModel extends Ci_Model
 		];
 			$this->db->where('id', $this->input->post('id'));
        		$this->db->update('preventive_maintenance_form_april', $preventive_maintenance_form_april);
+	}
+	public function editpreventivemay()
+	{
+		$preventive_maintenance_form_may = [
+			"machine" => $this->input->post('machine', true),
+			"description" => $this->input->post('description', true),
+			"ww01_1" => $this->input->post('ww01_1', true),			
+			"ww01_2" => $this->input->post('ww01_2', true),			
+			"ww01_3" => $this->input->post('ww01_3', true),			
+			"ww01_4" => $this->input->post('ww01_4', true),			
+			"ww01_5" => $this->input->post('ww01_5', true),			
+			"ww01_6" => $this->input->post('ww01_6', true),			
+			"ww02_7" => $this->input->post('ww02_7', true),			
+			"ww02_8" => $this->input->post('ww02_8', true),			
+			"ww02_9" => $this->input->post('ww02_9', true),			
+			"ww02_10" => $this->input->post('ww02_10', true),			
+			"ww02_11" => $this->input->post('ww02_11', true),			
+			"ww02_12" => $this->input->post('ww02_12', true),			
+			"ww02_13" => $this->input->post('ww02_13', true),			
+			"ww03_14" => $this->input->post('ww03_14', true),			
+			"ww03_15" => $this->input->post('ww03_15', true),			
+			"ww03_16" => $this->input->post('ww03_16', true),			
+			"ww03_17" => $this->input->post('ww03_17', true),			
+			"ww03_18" => $this->input->post('ww03_18', true),			
+			"ww03_19" => $this->input->post('ww03_19', true),			
+			"ww03_20" => $this->input->post('ww03_20', true),			
+			"ww04_21" => $this->input->post('ww04_21', true),			
+			"ww04_22" => $this->input->post('ww04_22', true),			
+			"ww04_23" => $this->input->post('ww04_23', true),			
+			"ww04_24" => $this->input->post('ww04_24', true),			
+			"ww04_25" => $this->input->post('ww04_25', true),			
+			"ww04_26" => $this->input->post('ww04_26', true),			
+			"ww04_27" => $this->input->post('ww04_27', true),			
+			"ww05_28" => $this->input->post('ww05_28', true),			
+			"ww05_29" => $this->input->post('ww05_29', true),			
+			"ww05_30" => $this->input->post('ww05_30', true),			
+			"ww05_31" => $this->input->post('ww05_31', true),			
+		];
+			$this->db->where('id', $this->input->post('id'));
+       		$this->db->update('preventive_maintenance_form_may', $preventive_maintenance_form_may);
 	}
 
 	// PPM vs Actual
