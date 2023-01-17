@@ -422,6 +422,15 @@ class Dashboard extends CI_Controller {
 		$this->load->view('add_maintenance_july');
 		$this->load->view('templates/footer');
 	}
+	public function add_maintenance_august()
+	{
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+		
+		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+		$this->load->view('add_maintenance_august');
+		$this->load->view('templates/footer');
+	}
 
 	// Masterlist of the Equipment
 	public function save_equipment()
@@ -1152,6 +1161,95 @@ class Dashboard extends CI_Controller {
 			return redirect('Dashboard/checkreport_preventive_july');
 		}
   	}
+	  public function save_preventive_august()
+  	{
+		$id = $this->input->post('id');
+		$machine = $this->input->post('machine');
+		$description = $this->input->post('description');
+		$ww01_1 = $this->input->post('ww01_1');
+		$ww01_2 = $this->input->post('ww01_2');
+		$ww01_3 = $this->input->post('ww01_3');
+		$ww01_4 = $this->input->post('ww01_4');
+		$ww01_5 = $this->input->post('ww01_5');
+		$ww02_6 = $this->input->post('ww02_6');
+		$ww02_7 = $this->input->post('ww02_7');
+		$ww02_8 = $this->input->post('ww02_8');
+		$ww02_9 = $this->input->post('ww02_9');
+		$ww02_10 = $this->input->post('ww02_10');
+		$ww02_11 = $this->input->post('ww02_11');
+		$ww02_12 = $this->input->post('ww02_12');
+		$ww03_13 = $this->input->post('ww03_13');
+		$ww03_14 = $this->input->post('ww03_14');
+		$ww03_15 = $this->input->post('ww03_15');
+		$ww03_16 = $this->input->post('ww03_16');
+		$ww03_17 = $this->input->post('ww03_17');
+		$ww03_18 = $this->input->post('ww03_18');
+		$ww03_19 = $this->input->post('ww03_19');
+		$ww04_20 = $this->input->post('ww04_20');
+		$ww04_21 = $this->input->post('ww04_21');
+		$ww04_22 = $this->input->post('ww04_22');
+		$ww04_23 = $this->input->post('ww04_23');
+		$ww04_24 = $this->input->post('ww04_24');
+		$ww04_25 = $this->input->post('ww04_25');
+		$ww04_26 = $this->input->post('ww04_26');
+		$ww05_27 = $this->input->post('ww05_27');
+		$ww05_28 = $this->input->post('ww05_28');
+		$ww05_29 = $this->input->post('ww05_29');
+		$ww05_30 = $this->input->post('ww05_30');
+		$ww05_31 = $this->input->post('ww05_31');
+		
+		$data = Array(
+			"id" => $id,
+			"machine" => $machine,
+			"description" => $description,
+			"ww01_1" => $ww01_1, 
+ 			"ww01_2" => $ww01_2, 
+ 			"ww01_3" => $ww01_3, 
+ 			"ww01_4" => $ww01_4, 
+ 			"ww01_5" => $ww01_5, 
+ 			"ww02_6" => $ww02_6, 
+ 			"ww02_7" => $ww02_7, 
+ 			"ww02_8" => $ww02_8, 
+ 			"ww02_9" => $ww02_9, 
+ 			"ww02_10" => $ww02_10,  
+			"ww02_11" => $ww02_11,  
+			"ww02_12" => $ww02_12,  
+			"ww03_13" => $ww03_13,  
+			"ww03_14" => $ww03_14,  
+			"ww03_15" => $ww03_15,  
+			"ww03_16" => $ww03_16,  
+			"ww03_17" => $ww03_17,  
+			"ww03_18" => $ww03_18,  
+			"ww03_19" => $ww03_19,  
+			"ww04_20" => $ww04_20,  
+			"ww04_21" => $ww04_21,  
+			"ww04_22" => $ww04_22,  
+			"ww04_23" => $ww04_23,  
+			"ww04_24" => $ww04_24,  
+			"ww04_25" => $ww04_25,  
+			"ww04_26" => $ww04_26,  
+			"ww05_27" => $ww05_27,  
+			"ww05_28" => $ww05_28,
+			"ww05_29" => $ww05_29,
+			"ww05_30" => $ww05_30,
+			"ww05_31" => $ww05_31,
+		);
+
+		$this->form_validation->set_rules('machine', 'machine', 'required');				
+		$this->form_validation->set_rules('description', 'description', 'required');		
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/header');
+			$this->load->view('templates/sidebar');
+			$this->load->view('add_maintenance_august',$data);
+			$this->load->view('templates/footer');
+			
+		} else {
+			$this->DashboardModel->addpreventiveaugust($data);
+			$this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Data added successfully!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+			return redirect('Dashboard/checkreport_preventive_august');
+		}
+  	}
 
 	public function checkreport_preventive_january()
 	{
@@ -1226,6 +1324,16 @@ class Dashboard extends CI_Controller {
 		$this->load->view('preventive_maintenance_july',$data);
 		$this->load->view('templates/footer');
 	}
+	public function checkreport_preventive_august()
+	{
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+		$data["preventive_maintenance_form_august"] = $this->DashboardModel->getpreventiveForm_august();		  
+
+		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+		$this->load->view('preventive_maintenance_august',$data);
+		$this->load->view('templates/footer');
+	}
 
 	public function deleteReportPreventiveJanuary($id)
 	{		
@@ -1270,6 +1378,12 @@ class Dashboard extends CI_Controller {
 		$id = $this->DashboardModel->hapuspreventivejuly($id);
         $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Data Deleted Succesfully!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('Dashboard/checkreport_preventive_july');
+	}
+	public function deleteReportPreventiveAugust($id)
+	{		
+		$id = $this->DashboardModel->hapuspreventiveaugust($id);
+        $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Data Deleted Succesfully!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		redirect('Dashboard/checkreport_preventive_august');
 	}
 
 	public function ubah_preventive_january($id)
@@ -1412,6 +1526,26 @@ class Dashboard extends CI_Controller {
 			$this->DashboardModel->editpreventivejuly();
 			$this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Edit data success!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 			return  redirect('Dashboard/checkreport_preventive_july');
+		}
+	}
+	public function ubah_preventive_august($id)
+	{
+		$data["preventive_maintenance_form_august"] = $this->DashboardModel->edit_preventive_august($id);
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->form_validation->set_rules('machine', 'Machine', 'required');
+		$this->form_validation->set_rules('description', 'Applicable Machine Description', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/header',$data);
+			$this->load->view('templates/sidebar',$data);
+			$this->load->view('ubah_maintenance_august',$data);
+			$this->load->view('templates/footer');
+			
+		} else {
+			$this->DashboardModel->editpreventiveaugust();
+			$this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Edit data success!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+			return  redirect('Dashboard/checkreport_preventive_august');
 		}
 	}
 
