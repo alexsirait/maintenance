@@ -367,7 +367,6 @@ class Dashboard extends CI_Controller {
 		$this->load->view('add_maintenance_january');
 		$this->load->view('templates/footer');
 	}
-
 	public function add_maintenance_february()
 	{
 		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
@@ -447,6 +446,15 @@ class Dashboard extends CI_Controller {
 		$this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
 		$this->load->view('add_maintenance_october');
+		$this->load->view('templates/footer');
+	}
+	public function add_maintenance_november()
+	{
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+		
+		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+		$this->load->view('add_maintenance_november');
 		$this->load->view('templates/footer');
 	}
 
@@ -654,7 +662,6 @@ class Dashboard extends CI_Controller {
 			return redirect('Dashboard/checkreport_preventive_january');
 		}
   	}
-
 	public function save_preventive_february()
   	{
 		$id = $this->input->post('id');
@@ -1090,7 +1097,7 @@ class Dashboard extends CI_Controller {
 			return redirect('Dashboard/checkreport_preventive_june');
 		}
   	}
-	  public function save_preventive_july()
+	public function save_preventive_july()
   	{
 		$id = $this->input->post('id');
 		$machine = $this->input->post('machine');
@@ -1179,7 +1186,7 @@ class Dashboard extends CI_Controller {
 			return redirect('Dashboard/checkreport_preventive_july');
 		}
   	}
-	  public function save_preventive_august()
+	public function save_preventive_august()
   	{
 		$id = $this->input->post('id');
 		$machine = $this->input->post('machine');
@@ -1268,7 +1275,7 @@ class Dashboard extends CI_Controller {
 			return redirect('Dashboard/checkreport_preventive_august');
 		}
   	}
-	  public function save_preventive_september()
+	public function save_preventive_september()
   	{
 		$id = $this->input->post('id');
 		$machine = $this->input->post('machine');
@@ -1444,6 +1451,93 @@ class Dashboard extends CI_Controller {
 			return redirect('Dashboard/checkreport_preventive_october');
 		}
   	}
+	public function save_preventive_november()
+  	{
+		$id = $this->input->post('id');
+		$machine = $this->input->post('machine');
+		$description = $this->input->post('description');
+		$ww01_1 = $this->input->post('ww01_1');
+		$ww01_2 = $this->input->post('ww01_2');
+		$ww01_3 = $this->input->post('ww01_3');
+		$ww01_4 = $this->input->post('ww01_4');
+		$ww02_5 = $this->input->post('ww02_5');
+		$ww02_6 = $this->input->post('ww02_6');
+		$ww02_7 = $this->input->post('ww02_7');
+		$ww02_8 = $this->input->post('ww02_8');
+		$ww02_9 = $this->input->post('ww02_9');
+		$ww02_10 = $this->input->post('ww02_10');
+		$ww02_11 = $this->input->post('ww02_11');
+		$ww03_12 = $this->input->post('ww03_12');
+		$ww03_13 = $this->input->post('ww03_13');
+		$ww03_14 = $this->input->post('ww03_14');
+		$ww03_15 = $this->input->post('ww03_15');
+		$ww03_16 = $this->input->post('ww03_16');
+		$ww03_17 = $this->input->post('ww03_17');
+		$ww03_18 = $this->input->post('ww03_18');
+		$ww04_19 = $this->input->post('ww04_19');
+		$ww04_20 = $this->input->post('ww04_20');
+		$ww04_21 = $this->input->post('ww04_21');
+		$ww04_22 = $this->input->post('ww04_22');
+		$ww04_23 = $this->input->post('ww04_23');
+		$ww04_24 = $this->input->post('ww04_24');
+		$ww04_25 = $this->input->post('ww04_25');
+		$ww05_26 = $this->input->post('ww05_26');
+		$ww05_27 = $this->input->post('ww05_27');
+		$ww05_28 = $this->input->post('ww05_28');
+		$ww05_29 = $this->input->post('ww05_29');
+		$ww05_30 = $this->input->post('ww05_30');
+		
+		$data = Array(
+			"id" => $id,
+			"machine" => $machine,
+			"description" => $description,
+			"ww01_1" => $ww01_1, 
+ 			"ww01_2" => $ww01_2, 
+ 			"ww01_3" => $ww01_3, 
+ 			"ww01_4" => $ww01_4, 
+ 			"ww02_5" => $ww02_5, 
+ 			"ww02_6" => $ww02_6, 
+ 			"ww02_7" => $ww02_7, 
+ 			"ww02_8" => $ww02_8, 
+ 			"ww02_9" => $ww02_9, 
+ 			"ww02_10" => $ww02_10,  
+			"ww02_11" => $ww02_11,  
+			"ww03_12" => $ww03_12,  
+			"ww03_13" => $ww03_13,  
+			"ww03_14" => $ww03_14,  
+			"ww03_15" => $ww03_15,  
+			"ww03_16" => $ww03_16,  
+			"ww03_17" => $ww03_17,  
+			"ww03_18" => $ww03_18,  
+			"ww04_19" => $ww04_19,  
+			"ww04_20" => $ww04_20,  
+			"ww04_21" => $ww04_21,  
+			"ww04_22" => $ww04_22,  
+			"ww04_23" => $ww04_23,  
+			"ww04_24" => $ww04_24,  
+			"ww04_25" => $ww04_25,  
+			"ww05_26" => $ww05_26,  
+			"ww05_27" => $ww05_27,  
+			"ww05_28" => $ww05_28,
+			"ww05_29" => $ww05_29,
+			"ww05_30" => $ww05_30,
+		);
+
+		$this->form_validation->set_rules('machine', 'machine', 'required');				
+		$this->form_validation->set_rules('description', 'description', 'required');		
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/header');
+			$this->load->view('templates/sidebar');
+			$this->load->view('add_maintenance_november',$data);
+			$this->load->view('templates/footer');
+			
+		} else {
+			$this->DashboardModel->addpreventivenovember($data);
+			$this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Data added successfully!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+			return redirect('Dashboard/checkreport_preventive_november');
+		}
+  	}
 
 	public function checkreport_preventive_january()
 	{
@@ -1455,7 +1549,6 @@ class Dashboard extends CI_Controller {
 		$this->load->view('preventive_maintenance_january',$data);
 		$this->load->view('templates/footer');
 	}
-
 	public function checkreport_preventive_february()
 	{
 		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
@@ -1466,7 +1559,6 @@ class Dashboard extends CI_Controller {
 		$this->load->view('preventive_maintenance_february',$data);
 		$this->load->view('templates/footer');
 	}
-
 	public function checkreport_preventive_march()
 	{
 		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
@@ -1477,7 +1569,6 @@ class Dashboard extends CI_Controller {
 		$this->load->view('preventive_maintenance_march',$data);
 		$this->load->view('templates/footer');
 	}
-
 	public function checkreport_preventive_april()
 	{
 		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
@@ -1548,6 +1639,16 @@ class Dashboard extends CI_Controller {
 		$this->load->view('preventive_maintenance_october',$data);
 		$this->load->view('templates/footer');
 	}
+	public function checkreport_preventive_november()
+	{
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+		$data["preventive_maintenance_form_november"] = $this->DashboardModel->getpreventiveForm_november();		  
+
+		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+		$this->load->view('preventive_maintenance_november',$data);
+		$this->load->view('templates/footer');
+	}
 
 	public function deleteReportPreventiveJanuary($id)
 	{		
@@ -1555,14 +1656,12 @@ class Dashboard extends CI_Controller {
         $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Data Deleted Succesfully!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('Dashboard/checkreport_preventive_january');
 	}
-
 	public function deleteReportPreventiveFebruary($id)
 	{		
 		$id = $this->DashboardModel->hapuspreventivefebruary($id);
         $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Data Deleted Succesfully!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('Dashboard/checkreport_preventive_february');
 	}
-
 	public function deleteReportPreventiveMarch($id)
 	{		
 		$id = $this->DashboardModel->hapuspreventivemarch($id);
@@ -1611,6 +1710,12 @@ class Dashboard extends CI_Controller {
         $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Data Deleted Succesfully!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 		redirect('Dashboard/checkreport_preventive_october');
 	}
+	public function deleteReportPreventiveNovember($id)
+	{		
+		$id = $this->DashboardModel->hapuspreventivenovember($id);
+        $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Data Deleted Succesfully!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		redirect('Dashboard/checkreport_preventive_november');
+	}
 
 	public function ubah_preventive_january($id)
 	{
@@ -1632,7 +1737,6 @@ class Dashboard extends CI_Controller {
 			return  redirect('Dashboard/checkreport_preventive_january');
 		}
 	}
-
 	public function ubah_preventive_february($id)
 	{
 		$data["preventive_maintenance_form_february"] = $this->DashboardModel->edit_preventive_february($id);
@@ -1653,7 +1757,6 @@ class Dashboard extends CI_Controller {
 			return  redirect('Dashboard/checkreport_preventive_february');
 		}
 	}
-
 	public function ubah_preventive_march($id)
 	{
 		$data["preventive_maintenance_form_march"] = $this->DashboardModel->edit_preventive_march($id);
@@ -1812,6 +1915,26 @@ class Dashboard extends CI_Controller {
 			$this->DashboardModel->editpreventiveoctober();
 			$this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Edit data success!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 			return  redirect('Dashboard/checkreport_preventive_october');
+		}
+	}
+	public function ubah_preventive_november($id)
+	{
+		$data["preventive_maintenance_form_november"] = $this->DashboardModel->edit_preventive_november($id);
+		$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->form_validation->set_rules('machine', 'Machine', 'required');
+		$this->form_validation->set_rules('description', 'Applicable Machine Description', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('templates/header',$data);
+			$this->load->view('templates/sidebar',$data);
+			$this->load->view('ubah_maintenance_november',$data);
+			$this->load->view('templates/footer');
+			
+		} else {
+			$this->DashboardModel->editpreventivenovember();
+			$this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Planned Preventive Maintenance Edit data success!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+			return  redirect('Dashboard/checkreport_preventive_november');
 		}
 	}
 
