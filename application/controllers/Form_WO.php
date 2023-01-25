@@ -21,37 +21,6 @@ class Form_WO extends CI_Controller {
 
 	public function store_form_wo()
 	{
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('order_by', 'Order by', 'required');
-		$this->form_validation->set_rules('day_date_time_order', 'Day, Date & Time', 'required');
-		$this->form_validation->set_rules('wo_received_by', 'WO Received by', 'required');
-		$this->form_validation->set_rules('day_date_time_received', 'Day, Date & Time', 'required');
-		$this->form_validation->set_rules('order_description', 'Order Description', 'required');
-		$this->form_validation->set_rules('machine_tag_no', 'Machine & Tag No.', 'required');
-		$this->form_validation->set_rules('start_repair', 'Start Repair', 'required');
-		$this->form_validation->set_rules('serial_no', 'Serial No', 'required');
-		$this->form_validation->set_rules('completed_repair', 'Completed Repair', 'required');
-		$this->form_validation->set_rules('detail_problem', 'Detail of Problem', 'required');
-		$this->form_validation->set_rules('root_cause', 'Root Cause', 'required');
-		$this->form_validation->set_rules('corrective_action', 'Corrective Action', 'required');
-		$this->form_validation->set_rules('preventive_action', 'Preventive Action', 'required');
-		$this->form_validation->set_rules('part_description_1', 'Part Description', 'required');
-		$this->form_validation->set_rules('part_description_2', 'Part Description', 'required');
-		$this->form_validation->set_rules('part_description_3', 'Part Description', 'required');
-		$this->form_validation->set_rules('part_no_1', 'Part No.', 'required');
-		$this->form_validation->set_rules('part_no_2', 'Part No.', 'required');
-		$this->form_validation->set_rules('part_no_3', 'Part No.', 'required');
-		$this->form_validation->set_rules('qty_1', 'Qty', 'required');
-		$this->form_validation->set_rules('qty_2', 'Qty', 'required');
-		$this->form_validation->set_rules('qty_3', 'Qty', 'required');
-		$this->form_validation->set_rules('remarks_1', 'Remarks', 'required');
-		$this->form_validation->set_rules('remarks_2', 'Remarks', 'required');
-		$this->form_validation->set_rules('remarks_3', 'Remarks', 'required');
-		$this->form_validation->set_rules('ordered_by_name', 'Ordered by Name', 'required');
-		$this->form_validation->set_rules('repaired_by_name', 'Repaired by Name', 'required');
-		$this->form_validation->set_rules('head_production_name', 'By Head Production Name', 'required');
-		$this->form_validation->set_rules('head_maintenance_name', 'By Head Maintenance Name', 'required');
-
 		$order_by = $this->input->post('order_by');
 		$day_date_time_order  = $this->input->post('day_date_time_order');
 		$wo_received_by = $this->input->post('wo_received_by');
@@ -77,58 +46,58 @@ class Form_WO extends CI_Controller {
 		$remarks_1 = $this->input->post('remarks_1');
 		$remarks_2 = $this->input->post('remarks_2');
 		$remarks_3 = $this->input->post('remarks_3');
-		$ordered_by_name = $this->input->post('ordered_by_name');
-		$repaired_by_name = $this->input->post('repaired_by_name');
-		$head_production_name = $this->input->post('head_production_name');
-		$head_maintenance_name = $this->input->post('head_maintenance_name');
-		$ordered_by = $_FILES['ordered_by'];
-		if ($ordered_by!='') {
-			$config['upload_path'] = './uploads/signature';
-			$config['allowed_types'] = 'jpg|png|gif';
+		// $ordered_by_name = $this->input->post('ordered_by_name');
+		// $repaired_by_name = $this->input->post('repaired_by_name');
+		// $head_production_name = $this->input->post('head_production_name');
+		// $head_maintenance_name = $this->input->post('head_maintenance_name');
+		// $ordered_by = $_FILES['ordered_by'];
+		// if ($ordered_by!='') {
+		// 	$config['upload_path'] = './uploads/signature';
+		// 	$config['allowed_types'] = 'jpg|png|gif';
 
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('ordered_by')) {
-				echo "Upload Gagal"; die();
-			} else {
-				$ordered_by = $this->upload->data('file_name');
-			}
-		}
-		$repaired_by = $_FILES['repaired_by'];
-		if ($repaired_by!='') {
-			$config['upload_path'] = './uploads/signature';
-			$config['allowed_types'] = 'jpg|png|gif';
+		// 	$this->load->library('upload', $config);
+		// 	if (!$this->upload->do_upload('ordered_by')) {
+		// 		echo "Upload Gagal"; die();
+		// 	} else {
+		// 		$ordered_by = $this->upload->data('file_name');
+		// 	}
+		// }
+		// $repaired_by = $_FILES['repaired_by'];
+		// if ($repaired_by!='') {
+		// 	$config['upload_path'] = './uploads/signature';
+		// 	$config['allowed_types'] = 'jpg|png|gif';
 
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('repaired_by')) {
-				echo "Upload Gagal"; die();
-			} else {
-				$repaired_by = $this->upload->data('file_name');
-			}
-		}
-		$head_production = $_FILES['head_production'];
-		if ($head_production!='') {
-			$config['upload_path'] = './uploads/signature';
-			$config['allowed_types'] = 'jpg|png|gif';
+		// 	$this->load->library('upload', $config);
+		// 	if (!$this->upload->do_upload('repaired_by')) {
+		// 		echo "Upload Gagal"; die();
+		// 	} else {
+		// 		$repaired_by = $this->upload->data('file_name');
+		// 	}
+		// }
+		// $head_production = $_FILES['head_production'];
+		// if ($head_production!='') {
+		// 	$config['upload_path'] = './uploads/signature';
+		// 	$config['allowed_types'] = 'jpg|png|gif';
 
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('head_production')) {
-				echo "Upload Gagal"; die();
-			} else {
-				$head_production = $this->upload->data('file_name');
-			}
-		}
-		$head_maintenance = $_FILES['head_maintenance'];
-		if ($head_maintenance!='') {
-			$config['upload_path'] = './uploads/signature';
-			$config['allowed_types'] = 'jpg|png|gif';
+		// 	$this->load->library('upload', $config);
+		// 	if (!$this->upload->do_upload('head_production')) {
+		// 		echo "Upload Gagal"; die();
+		// 	} else {
+		// 		$head_production = $this->upload->data('file_name');
+		// 	}
+		// }
+		// $head_maintenance = $_FILES['head_maintenance'];
+		// if ($head_maintenance!='') {
+		// 	$config['upload_path'] = './uploads/signature';
+		// 	$config['allowed_types'] = 'jpg|png|gif';
 
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('head_maintenance')) {
-				echo "Upload Gagal"; die();
-			} else {
-				$head_maintenance = $this->upload->data('file_name');
-			}
-		}
+		// 	$this->load->library('upload', $config);
+		// 	if (!$this->upload->do_upload('head_maintenance')) {
+		// 		echo "Upload Gagal"; die();
+		// 	} else {
+		// 		$head_maintenance = $this->upload->data('file_name');
+		// 	}
+		// }
 		
 		$data = Array(
 			"order_by" => $order_by,
@@ -156,29 +125,34 @@ class Form_WO extends CI_Controller {
 			"remarks_1" => $remarks_1,
 			"remarks_2" => $remarks_2,
 			"remarks_3" => $remarks_3,
-			"ordered_by" => $ordered_by,
-			"ordered_by_name" => $ordered_by_name,
-			"repaired_by" => $repaired_by,
-			"repaired_by_name" => $repaired_by_name,
-			"head_production" => $head_production,
-			"head_production_name" => $head_production_name,
-			"head_maintenance" => $head_maintenance,
-			"head_maintenance_name" => $head_maintenance_name,														
+			// "ordered_by" => $ordered_by,
+			// "ordered_by_name" => $ordered_by_name,
+			// "repaired_by" => $repaired_by,
+			// "repaired_by_name" => $repaired_by_name,
+			// "head_production" => $head_production,
+			// "head_production_name" => $head_production_name,
+			// "head_maintenance" => $head_maintenance,
+			// "head_maintenance_name" => $head_maintenance_name,														
 		);
 
-		if ($this->form_validation->run() != false) {
+		// if ($this->form_validation->run() != false) {
+			$user = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+			$this->load->helper('url');
 			$this->load->model('M_WO');
 			$this->M_WO->store_wo($data);
 			$this->session->set_flashdata('add_success', 'MAINTENANCE WORK ORDER Form has been successfully added. ✅');
-			redirect('report_wo');
-		} else {
-			$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
+			// site_url('https://api.whatsapp.com/send?phone=' + $user['gm_phone'] + '&text=Hi,%20This%20is%20a%20message%20from%20the%20Maintenance%20System.');
+			// anchor('https://api.whatsapp.com/send?phone=' + $user['gm_phone'] + '&text=Hi,%20This%20is%20a%20message%20from%20the%20Maintenance%20System.');
+			$wa_link = 'https://api.whatsapp.com/send?phone=' . $user["gm_phone"] . '&text=Hi,%20This%20is%20a%20message%20from%20the%20Maintenance%20System.';
+			redirect($wa_link);
+		// } else {
+		// 	$data['user'] = $this->db->get_where('employee', ['email' => $this->session->userdata('email')])->row_array();
 
-			$this->load->view('templates/header', $data);
-			$this->load->view('templates/sidebar', $data);
-			$this->load->view('form_wo', $data);
-			$this->load->view('templates/footer');
-		}
+		// 	$this->load->view('templates/header', $data);
+		// 	$this->load->view('templates/sidebar', $data);
+		// 	$this->load->view('form_wo', $data);
+		// 	$this->load->view('templates/footer');
+		// }
 	}
 
 	public function edit_form($id)
@@ -233,94 +207,94 @@ class Form_WO extends CI_Controller {
 		$remarks_1 = $this->input->post('remarks_1');
 		$remarks_2 = $this->input->post('remarks_2');
 		$remarks_3 = $this->input->post('remarks_3');
-		$ordered_by_name = $this->input->post('ordered_by_name');
-		$repaired_by_name = $this->input->post('repaired_by_name');
-		$head_production_name = $this->input->post('head_production_name');
-		$head_maintenance_name = $this->input->post('head_maintenance_name');
+		// $ordered_by_name = $this->input->post('ordered_by_name');
+		// $repaired_by_name = $this->input->post('repaired_by_name');
+		// $head_production_name = $this->input->post('head_production_name');
+		// $head_maintenance_name = $this->input->post('head_maintenance_name');
 		
-		if ($this->input->post('ordered_by') != null || $this->input->post('ordered_by') != '') {
-			$ordered_by = $this->input->post('ordered_by');	
-		} else {
-			$ordered_by = $_FILES['ordered_by'];	
-		}
+		// if ($this->input->post('ordered_by') != null || $this->input->post('ordered_by') != '') {
+		// 	$ordered_by = $this->input->post('ordered_by');	
+		// } else {
+		// 	$ordered_by = $_FILES['ordered_by'];	
+		// }
 		
-		if ($this->input->post('ordered_by') == null || $this->input->post('ordered_by') == '') {
-			if ($ordered_by != '') {
-				$config['upload_path'] = './uploads/signature';
-				$config['allowed_types'] = 'jpg|png|gif';
+		// if ($this->input->post('ordered_by') == null || $this->input->post('ordered_by') == '') {
+		// 	if ($ordered_by != '') {
+		// 		$config['upload_path'] = './uploads/signature';
+		// 		$config['allowed_types'] = 'jpg|png|gif';
 
-				$this->load->library('upload', $config);
-				if (!$this->upload->do_upload('ordered_by')) {
-					echo "Upload Gagal";
-					die();
-				} else {
-					$ordered_by = $this->upload->data('file_name');
-				}
-			}
-		}
+		// 		$this->load->library('upload', $config);
+		// 		if (!$this->upload->do_upload('ordered_by')) {
+		// 			echo "Upload Gagal";
+		// 			die();
+		// 		} else {
+		// 			$ordered_by = $this->upload->data('file_name');
+		// 		}
+		// 	}
+		// }
 
-		if ($this->input->post('repaired_by') != null || $this->input->post('repaired_by') != '') {
-			$repaired_by = $this->input->post('repaired_by');	
-		} else {
-			$repaired_by = $_FILES['repaired_by'];	
-		}
+		// if ($this->input->post('repaired_by') != null || $this->input->post('repaired_by') != '') {
+		// 	$repaired_by = $this->input->post('repaired_by');	
+		// } else {
+		// 	$repaired_by = $_FILES['repaired_by'];	
+		// }
 		
-		if ($this->input->post('repaired_by') == null || $this->input->post('repaired_by') == '') {
-			if ($repaired_by != '') {
-				$config['upload_path'] = './uploads/signature';
-				$config['allowed_types'] = 'jpg|png|gif';
+		// if ($this->input->post('repaired_by') == null || $this->input->post('repaired_by') == '') {
+		// 	if ($repaired_by != '') {
+		// 		$config['upload_path'] = './uploads/signature';
+		// 		$config['allowed_types'] = 'jpg|png|gif';
 
-				$this->load->library('upload', $config);
-				if (!$this->upload->do_upload('repaired_by')) {
-					echo "Upload Gagal";
-					die();
-				} else {
-					$repaired_by = $this->upload->data('file_name');
-				}
-			}
-		}
+		// 		$this->load->library('upload', $config);
+		// 		if (!$this->upload->do_upload('repaired_by')) {
+		// 			echo "Upload Gagal";
+		// 			die();
+		// 		} else {
+		// 			$repaired_by = $this->upload->data('file_name');
+		// 		}
+		// 	}
+		// }
 
-		if ($this->input->post('head_production') != null || $this->input->post('head_production') != '') {
-			$head_production = $this->input->post('head_production');	
-		} else {
-			$head_production = $_FILES['head_production'];	
-		}
+		// if ($this->input->post('head_production') != null || $this->input->post('head_production') != '') {
+		// 	$head_production = $this->input->post('head_production');	
+		// } else {
+		// 	$head_production = $_FILES['head_production'];	
+		// }
 		
-		if ($this->input->post('head_production') == null || $this->input->post('head_production') == '') {
-			if ($head_production != '') {
-				$config['upload_path'] = './uploads/signature';
-				$config['allowed_types'] = 'jpg|png|gif';
+		// if ($this->input->post('head_production') == null || $this->input->post('head_production') == '') {
+		// 	if ($head_production != '') {
+		// 		$config['upload_path'] = './uploads/signature';
+		// 		$config['allowed_types'] = 'jpg|png|gif';
 
-				$this->load->library('upload', $config);
-				if (!$this->upload->do_upload('head_production')) {
-					echo "Upload Gagal";
-					die();
-				} else {
-					$head_production = $this->upload->data('file_name');
-				}
-			}
-		}
+		// 		$this->load->library('upload', $config);
+		// 		if (!$this->upload->do_upload('head_production')) {
+		// 			echo "Upload Gagal";
+		// 			die();
+		// 		} else {
+		// 			$head_production = $this->upload->data('file_name');
+		// 		}
+		// 	}
+		// }
 
-		if ($this->input->post('head_maintenance') != null || $this->input->post('head_maintenance') != '') {
-			$head_maintenance = $this->input->post('head_maintenance');	
-		} else {
-			$head_maintenance = $_FILES['head_maintenance'];	
-		}
+		// if ($this->input->post('head_maintenance') != null || $this->input->post('head_maintenance') != '') {
+		// 	$head_maintenance = $this->input->post('head_maintenance');	
+		// } else {
+		// 	$head_maintenance = $_FILES['head_maintenance'];	
+		// }
 		
-		if ($this->input->post('head_maintenance') == null || $this->input->post('head_maintenance') == '') {
-			if ($head_maintenance != '') {
-				$config['upload_path'] = './uploads/signature';
-				$config['allowed_types'] = 'jpg|png|gif';
+		// if ($this->input->post('head_maintenance') == null || $this->input->post('head_maintenance') == '') {
+		// 	if ($head_maintenance != '') {
+		// 		$config['upload_path'] = './uploads/signature';
+		// 		$config['allowed_types'] = 'jpg|png|gif';
 
-				$this->load->library('upload', $config);
-				if (!$this->upload->do_upload('head_maintenance')) {
-					echo "Upload Gagal";
-					die();
-				} else {
-					$head_maintenance = $this->upload->data('file_name');
-				}
-			}
-		}
+		// 		$this->load->library('upload', $config);
+		// 		if (!$this->upload->do_upload('head_maintenance')) {
+		// 			echo "Upload Gagal";
+		// 			die();
+		// 		} else {
+		// 			$head_maintenance = $this->upload->data('file_name');
+		// 		}
+		// 	}
+		// }
 
 		$data = array(
 			'id' => $id,
@@ -349,14 +323,14 @@ class Form_WO extends CI_Controller {
 			'remarks_1' => $remarks_1,
 			'remarks_2' => $remarks_2,
 			'remarks_3' => $remarks_3,
-			'ordered_by' => $ordered_by,
-			'ordered_by_name' => $ordered_by_name,
-			'repaired_by' => $repaired_by,
-			'repaired_by_name' => $repaired_by_name,
-			'head_production' => $head_production,
-			'head_production_name' => $head_production_name,
-			'head_maintenance' => $head_maintenance,
-			'head_maintenance_name' => $head_maintenance_name,
+			// 'ordered_by' => $ordered_by,
+			// 'ordered_by_name' => $ordered_by_name,
+			// 'repaired_by' => $repaired_by,
+			// 'repaired_by_name' => $repaired_by_name,
+			// 'head_production' => $head_production,
+			// 'head_production_name' => $head_production_name,
+			// 'head_maintenance' => $head_maintenance,
+			// 'head_maintenance_name' => $head_maintenance_name,
 		);
 
         $where = array(
@@ -365,7 +339,10 @@ class Form_WO extends CI_Controller {
 
 		$this->session->set_flashdata('add_success', 'MAINTENANCE WORK ORDER Form has been successfully updated. ✅');
         $this->M_WO->update_data($where, $data, 'wo_form');
-        redirect('report_wo');
+        // redirect('report_wo');
+
+		$wa_link = 'https://api.whatsapp.com/send?phone=' . $user["gm_phone"] . '&text=Hi,%20This%20is%20a%20message%20from%20the%20Maintenance%20System.';
+		redirect($wa_link);
     }
 
 }
